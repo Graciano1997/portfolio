@@ -1,0 +1,1 @@
+export const Title = ({title})=><h1 className="text-start text-white mt-3">{title}</h1>

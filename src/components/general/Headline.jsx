@@ -5,7 +5,7 @@ export const Headline=()=>{
     sm:text-[20px] md:text-[20px] lg:text-[30px] xl:text-[30px]
     ">
         <h1 >Welcome</h1>
-        <h2>At</h2>
-        <h2>Graciano Henrique Portfolio</h2>
+        <h2 className="text-xl">At</h2>
+        <h2 className="text-xl">Graciano Henrique Portfolio</h2>
     </div>);
 };
