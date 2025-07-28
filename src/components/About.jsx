@@ -39,7 +39,7 @@ export const About=()=>{
             </div>
             
             <div className="hidden sm:flex flex-col items-center justify-center">
-            <div className="flex h-50 w-50 sm:h-25 sm:w-25 md:h-50 md:w-50 ">
+            <div className="flex h-50 w-50 sm:h-25 sm:w-25 md:h-25 md:w-25 xl:w-45 xl:h-45 ">
                 <img className="w-[100%] h-[100%] rounded-full" src={gra} alt="Graciano Henrique" />
             </div>
             <div className="flex mt-2  justify-center gap-3 cursor-pointer">
