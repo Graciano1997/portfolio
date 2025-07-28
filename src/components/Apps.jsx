@@ -5,7 +5,7 @@ import { Search } from "./general/Search";
 export const Apps=()=>{
     return(<>
     <Search/>
-    <div className=" h-[70vh] md:h-90 sm:h-[200px] md:h-[65vh] xl:h-[70vh] xl:mt-2 w-73 sm:w-[600px] md:w-[700px] lx:w-[900px]
+    <div className=" h-[70vh] md:h-90 sm:h-[200px] md:h-[65vh] xl:h-[70vh] xl:mt-2 w-[100%] sm:w-[600px] md:w-[700px] lx:w-[900px]
      flex flex-wrap overflow-y-auto justify-center ">
         <AppItem icon={<MusicIcon className="w-10 h-10 bg-white"/>}/>
         <AppItem icon={<h1 className="text-xl">H</h1>}/>
