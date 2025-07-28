@@ -21,6 +21,7 @@ function App() {
       </Routes> 
         <Menu/>
         </main>
+        
  </>   
   )
 }
