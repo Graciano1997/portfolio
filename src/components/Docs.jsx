@@ -7,7 +7,7 @@ export const Docs=()=>{
     <Time/>
     <div className="h-100 w-100 sm:w-[50%]  fixed left-3 top-30 sm:top-25 md:top-30">
         <Title title={'My Docs'}/>
-        <div className="h-[250px] mt-10 sm:mt- flex md:flex-wrap md:gap-5">
+        <div className="h-[250px] mt-10 sm:mt-2 md:mt-10 flex  md:gap-3">
             <DocItem name={"Resume"}/>
             <DocItem name={"CV"}/>
             <DocItem name={"Motivation"}/>
