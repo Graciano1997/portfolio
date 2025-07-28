@@ -42,7 +42,7 @@ export const About=()=>{
             <div className="flex h-50 w-50">
                 <img className="w-[100%] h-[100%] rounded-full" src={gra} alt="Graciano Henrique" />
             </div>
-            <div className="flex mt-1  justify-center gap-3 cursor-pointer">
+            <div className="flex mt-2  justify-center gap-3 cursor-pointer">
                     <LinkedinIcon className="text-white w-8 h-8" />
                     <GithubIcon className="text-white w-8 h-8" />
                     <MailIcon className="text-white w-8 h-8" />
