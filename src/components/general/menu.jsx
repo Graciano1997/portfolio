@@ -32,14 +32,20 @@ export const Menu = ()=>{
 
     return(
         <>
-        {/* <div className="bg-white w-[70px] h-[70px] fixed bottom-10 rounded-full flex justify-center items-center cursor-pointer">
-            <LayoutGrid className="text-blue-650 h-10 w-10" />
-        </div> */}
+
+        {/* className={`${!isOpen?'w-[70px] h-[70px] md:w-[70px] md:h-[70px] sm:w-[50px] sm:h-[50px]':'w-[200px] sm:w-[50%] sm:h-[50px] h-[70px] md:h-[70px] '} 
+        bg-white fixed bottom-3 rounded-full 
+        flex justify-around items-center
+         cursor-pointer`}
+          */}
+
         
         <div ref={menuRef}  className={`${!isOpen?'w-[70px] h-[70px]':'w-[300px] sm:w-[50%] h-[60px]'} 
-        bg-white fixed bottom-10 rounded-full 
+        bg-white fixed bottom-1 rounded-full 
         flex justify-around items-center
-         cursor-pointer`}>
+         cursor-pointer
+         
+         `}>
            {!isOpen?
            (<LayoutGrid className="text-blue-650 h-10 w-10"/>):
             (<>

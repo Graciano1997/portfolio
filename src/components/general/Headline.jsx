@@ -1,6 +1,10 @@
 export const Headline=()=>{
     return(<div className="text-start text-white flex flex-col 
-    fixed left-10 top-40 w-[50%] h-50
+    absolute left-10 
+    top-40
+    sm:top-20 
+    md:top-40 
+    w-[50%] h-50
     text-[15px]
     sm:text-[20px] md:text-[20px] lg:text-[30px] xl:text-[30px]
     ">
