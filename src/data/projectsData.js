@@ -1,5 +1,4 @@
 import book from '../img/projects/book.png';
-import motoFront from '../img/projects/motoBooking.png';
 import naruto from '../img/projects/naruto.png';
 import restApp from '../img/projects/resting.png';
 import summitApp from '../img/projects/summit.png';
@@ -8,12 +7,17 @@ import movieApp from '../img/projects/gomovie.png';
 import mathApp from '../img/projects/math_magician.png';
 import budgetApp from '../img/projects/transation.png';
 import covidApp from '../img/projects/covid.png';
-import apiApp from '../img/projects/api.png';
+import motoFront from '../img/projects/motoBooking.png';
+import motoApi from '../img/projects/motoapi.png';
+import motologin from '../img/projects/motologin.png';
+import motomobile from '../img/projects/motomobile.png';
+import motodesktop from '../img/projects/motorcycle.svg';
+
 
 const projects = [
   {
     id: 1,
-    image: motoFront,
+    image: [motoFront,motoApi,motologin,motomobile,motodesktop],
     title: 'Motorcycle Booking Front',
     techLanguage: ['React.js', 'Redux', 'Rest API'],
     content: `This app provides an elegant and intuitive user interface and experience for booking your favorite Vespa. Users can login, browse a list of motorcycles, view detailed information about specific motorcycles, reserve a motorecycle, add and delete new motorcycles (ADM only). The application is fully responsive and offer a seamless experience on both desktop and mobile devices.
@@ -22,7 +26,7 @@ const projects = [
   },
   {
     id: 2,
-    image: apiApp,
+    image: [motoApi],
     title: 'Motorcycle Booking Back',
     techLanguage: [' RoR', 'Rspec', 'PL/pgSQL'],
     content: `Motorcycle Booking Back-end This repository contains the Rails back-end API for the "Motorcycle Booking" project. The API serves as the foundation for user authentication, motorcycle management, reservation handling, and related functionalities. It utilizes PostgreSQL as the database and is designed to be a robust and secure backend system. The API exposes endpoints for user login, motorcycle listing, motorcycle details, reservation creation, and user reservation listing. Additionally, it implements
@@ -31,7 +35,7 @@ const projects = [
   },
   {
     id: 3,
-    image: budgetApp,
+    image: [budgetApp],
     title: 'Budget App',
     techLanguage: [' RoR', 'Rspec', 'PL/pgSQL'],
     content: `Budget app is a web application that allows users to keep track of their financial expenses. In each category, users can add purchases. 
@@ -50,7 +54,7 @@ const projects = [
    }, */
   {
     id: 4,
-    image: covidApp,
+    image: [covidApp],
     title: 'Pandemic Situation',
     techLanguage: ['React.js', 'JEST', 'Redux'],
     content: `This is a React Web App that reports the 24H coronavirus new cases, recovered and active cases by each Country in All over the world!
@@ -59,7 +63,7 @@ const projects = [
   },
   {
     id: 5,
-    image: restApp,
+    image: [restApp],
     title: 'Resting Countries',
     techLanguage: ['React.js', 'Redux'],
     content: 'This is a React Web App that shows the fundamental indispensable information of each country of the worlds including its borders.',
@@ -67,7 +71,7 @@ const projects = [
   },
   {
     id: 6,
-    image: spaceApp,
+    image: [spaceApp],
     title: 'Space Travelers Hub',
     techLanguage: ['React.js', 'Redux', 'JEST'],
     content: 'This is a React Web App that displays some real rockets and available Missions from a fetched API and you are free to reserve....🚀🚀',
@@ -75,7 +79,7 @@ const projects = [
   },
   {
     id: 7,
-    image: book,
+    image: [book],
     title: 'BookStore App',
     techLanguage: ['React.js', 'JEST', 'Redux'],
     content: '**Bookstore** is a web application designed for manage and Store your books collection! Feel free to use this App 😊🤩😉',
@@ -83,7 +87,7 @@ const projects = [
   },
   {
     id: 8,
-    image: mathApp,
+    image: [mathApp],
     title: 'Math Magicians',
     techLanguage: ['React.js', 'JEST'],
     content: `**math_magicians** is a web application designed for mathematics enthusiasts 😍🤩. It is a Single Page App (SPA) that provides users with the ability 
@@ -93,7 +97,7 @@ const projects = [
   },
   {
     id: 9,
-    image: movieApp,
+    image: [movieApp],
     title: 'JS Capstone-Go!Moovies',
     techLanguage: ['JS', 'JEST', 'HTML', 'Webpack'],
     content: `This Web App has an interactive
@@ -102,7 +106,7 @@ const projects = [
   },
   {
     id: 10,
-    image: naruto,
+    image: [naruto],
     title: 'Naruto LeadBoard',
     techLanguage: ['CSS', 'HTML', 'Webpack'],
     content: 'This App offer to you  an elegant and simple user interface and experience, here you can see the Naruto fighters most recent Leadborad, feel free to add your best fight score 😍🤩',
@@ -110,7 +114,7 @@ const projects = [
   },
   {
     id: 11,
-    image: summitApp,
+    image: [summitApp],
     title: 'Creative Summit 2015',
     techLanguage: ['JS', 'sass', 'HTML'],
     content: 'This is a web page for the Creative Summit 2015, here your can find indispensable information about the Summit program.',
