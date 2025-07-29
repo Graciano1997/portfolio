@@ -1,34 +1,26 @@
-import { BarChart4, ChevronLeft, ChevronRight,LucideListMusic,PauseCircleIcon, PlayCircleIcon} from "lucide-react";
+import { BarChart4, ChevronLeft, ChevronRight,HeartCrack,HeartIcon,HeartPlusIcon,HeartPulseIcon,LucideListMusic,Music2,Music3Icon,Music4Icon,MusicIcon,PauseCircleIcon, PlayCircleIcon} from "lucide-react";
 import { MusicItem } from "./MusicItem";
 import { Search } from "./Search";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
+import musics from "../../data/musicData";
+import { MusicFooter } from "./musicFooter";
 
 export const MusicApp = ()=>{
     const navegate=useNavigate();
     const musicMobileRef=useRef(null);
     const musicMenuContainer=useRef(null);
+    const [playing,setPlaying]=useState(false);
+    const audioRef=useRef(null);
+    
+    const [musicNumber,setMusicNumber]=useState(0);
+    const musicCounter=musics.length;
+
+    const [musicToPlay,setMusicToPlay]=useState(null);
 
 
 
     const [mobileMusicMenuIsOpen,setMobileMusicMenuIsOpen]=useState(false);
-
-        //     useEffect(()=>{
-        //     const mobileMusicMenuhandlerClick=(event)=>{
-        //         if(!((musicMobileRef.current).contains(event.target))){ 
-        //             setMobileMusicMenuIsOpen(false); }
-        //             // else{
-        //             //    setMobileMusicMenuIsOpenIsOpen(!mobileMusicMenuIsOpen); 
-        //             // }
-        //             event.stopPropagation();
-        //     }
-            
-        //     window.addEventListener("click",mobileMusicMenuhandlerClick)
-    
-        //     return()=>{
-        //         window.removeEventListener("click",mobileMusicMenuhandlerClick)
-        //     }
-        // },[]);
     
     return(
         <>
@@ -66,32 +58,60 @@ export const MusicApp = ()=>{
               style={{zIndex:1000}}>
 
               <div className="flex flex-col items-center justify-center gap-3">
-                {/* <Search searchingPlaceholder={'Search for music title or Author'} style={'absolute top-10 md:top-20 '}/> */}
+                <Search searchingPlaceholder={'Search for music title or Author'} style={'absolute top-18 md:top-30 '}/>
                 <div className="flex gap-2 mt-10">
-                    <button style={{background:'transparent', outlineColor:'transparent'}}>
+                    <button onClick={
+                        ()=>{
+                        if(musicNumber>0){
+                        setMusicToPlay(musics[musicNumber-1]);
+                        setMusicNumber(musicNumber-1);
+                        setPlaying(true);
+                        }
+                        }
+                    } style={{background:'transparent', outlineColor:'transparent'}}>
                         <ChevronLeft className="w-20 h-20 md:w-35 md:h-35  text-[#F1F5F9] cursor-pointer"/>
                         </button>
-                    {/* <button style={{background:'transparent'}}><PauseCircleIcon className="text-[#F1F5F9] w-20 h-20 md:w-35 md:h-35  cursor-pointer"/></button> */}
-                    <button style={{background:'transparent'}}><PlayCircleIcon className="text-[#F1F5F9] w-20 h-20 md:w-35 md:h-35  cursor-pointer"/></button>
-                    {/* <div><PlayCircleIcon className="w-50 h-50"/></div> */}
-                    <button style={{background:'transparent'}}><ChevronRight className="text-[#F1F5F9] w-20 h-20 md:w-35 md:h-35 cursor-pointer"/></button>
+                    
+                    {(playing) && (
+                        <button onClick={()=>{
+                            if(musicToPlay && !audioRef.current.paused){
+                                audioRef.current.pause();
+                                setPlaying(false);
+                            }                            
+                        }} style={{background:'transparent'}}><PauseCircleIcon className="text-[#F1F5F9] w-20 h-20 md:w-35 md:h-35  cursor-pointer"/></button>
+                        )}
+
+
+                    {(!playing) && (
+                        <button
+                         onClick={()=>{
+                            if(musicToPlay){
+                                audioRef.current.play();
+                                setPlaying(true);
+                            }
+                            
+                        }}
+                        style={{background:'transparent'}}><PlayCircleIcon className="text-[#F1F5F9] w-20 h-20 md:w-35 md:h-35  cursor-pointer"/></button>
+                    )
+                }
+
+                    <button
+                    onClick={()=>{
+                        if(musicNumber<musicCounter-1 && musicCounter>0){
+                        setMusicToPlay(musics[musicNumber+1]);
+                        setMusicNumber(musicNumber+1);
+                        setPlaying(true);
+                    }
+
+                    }}
+                    style={{background:'transparent'}}><ChevronRight className="text-[#F1F5F9] w-20 h-20 md:w-35 md:h-35 cursor-pointer"/></button>
+                {musicToPlay && <audio ref={audioRef} src={musicToPlay.music} autoPlay></audio>}
+                <MusicFooter style={'absolute bottom-5 left-5 text-white hidden md:flex '}/>
                 </div>
               </div>
               <div className="hidden md:block bg-white/50 w-[2px] h-[100%]"></div>
               <div className="h-[100%] w-[100%] hidden  md:flex flex-col  items-center gap-3 text-white overflow-y-auto ml-2">
-                <MusicItem/>
-                <MusicItem/>
-                <MusicItem/>
-                <MusicItem/>
-                <MusicItem/>
-                <MusicItem/>
-                <MusicItem/>
-                <MusicItem/>
-                <MusicItem/>
-                <MusicItem/>
-                <MusicItem/>
-                <MusicItem/>
-                <MusicItem/>
+               {musics.map((item)=><MusicItem musicToPlay={musicToPlay} item={item} setPlaying={setPlaying} setMusicToPlay={setMusicToPlay} />)}
                 </div>
             </div>
         </div>
@@ -110,10 +130,8 @@ export const MusicApp = ()=>{
         <div ref={musicMobileRef} className='w-[70%] h-[100%] bg-black
         pt-2
         flex flex-col items-center gap-3 overflow-y-scroll' style={{zIndex:2500}} >
-            <MusicItem/>
-            <MusicItem/>
-            <MusicItem/>
-            <MusicItem/>
+           {musics.map((item)=><MusicItem item={item} musicToPlay={musicToPlay} setPlaying={setPlaying} setMusicToPlay={setMusicToPlay} />)}
+           <MusicFooter style={'absolute bottom-5 text-white'}/>
         </div>
 
         </div>
