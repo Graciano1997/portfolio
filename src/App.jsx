@@ -6,6 +6,7 @@ import { Apps } from './components/Apps'
 import { About } from './components/About'
 import { Docs } from './components/Docs'
 import { Setting } from './components/Setting'
+import { MusicApp } from './components/general/MusicApp'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path={'/apps'} element={<Apps/>}/>
         <Route path={'/about'} element={<About/>}/>
         <Route path={'/docs'} element={<Docs/>}/>
+        <Route path={'/music'} element={<MusicApp/>}/>
         <Route path={'/setting'} element={<Setting/>}/>
       </Routes> 
         <Menu/>

@@ -6,9 +6,9 @@ import { ProjectItem } from "./ProjectItem";
 
 export const Apps=()=>{
     return(<>
-    <Search/>
-    <div className=" h-[70vh] md:h-90 sm:h-[200px] md:h-[65vh] xl:h-[70vh] xl:mt-2 w-[100%] sm:w-[600px] md:w-[700px] lx:w-[900px]
-     flex flex-wrap overflow-y-auto justify-center ">
+    <Search searchingPlaceholder={'Search for an Application'} style={'absolute top-5 sm:top-5'}/>
+    <div className=" h-[70vh] md:h-90 sm:h-[70vh] sm:mt-3  md:h-[65vh] xl:h-[70vh] xl:mt-2 w-[100%] sm:w-[600px] md:w-[700px] lx:w-[900px]
+     flex flex-wrap overflow-y-auto justify-center">
         <AppItem icon={<MusicIcon className="w-10 h-10 bg-white"/>}/>
         <AppItem icon={<h1 className="text-xl">H</h1>}/>
         <AppItem icon={<Calculator className="w-10 h-10 bg-white"/>}/>
@@ -19,8 +19,8 @@ export const Apps=()=>{
         <AppItem icon={<SquarePenIcon className="w-10 h-10 bg-white"/>}/>
         <AppItem icon={<p className="text-xl">Budget</p>}/>
         <AppItem icon={<p className="text-md">Resting Countries</p>}/>
-        <AppItem icon={<p className="text-md">Ujama Bank</p>}/>
+        {/* <AppItem icon={<p className="text-md">Ujama Bank</p>}/> */}
     </div>
-    <ProjectItem project={projects[0]}/>
+    {false && (<ProjectItem project={projects[9]}/>)}
     </>);
 };
