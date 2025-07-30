@@ -6,24 +6,26 @@ import { Apps } from './components/Apps'
 import { About } from './components/About'
 import { Docs } from './components/Docs'
 import { Setting } from './components/Setting'
-import { MusicApp } from './components/general/MusicApp'
 import { useState } from 'react'
+import EditorApp from './components/App/EditorApp'
+import { MusicApp } from './components/App/MusicApp'
 
 function App() {
-  const [visibilityControl,setVisibilityControl]=useState(false);
+  const [visibilityControl,setVisibilityControl]=useState({music:false,editor:false});
   return (
  <>
       <main className='w-full h-full flex justify-center'>
       <Routes>
-        <Route path={'/'} element={<Main visibilityControl={setVisibilityControl} />}/>
+        <Route path={'/'} element={<Main visibilityControl={visibilityControl}  setVisibilityControl={setVisibilityControl} />}/>
         <Route path={'/apps'} element={<Apps/>}/>
         <Route path={'/about'} element={<About/>}/>
         <Route path={'/docs'} element={<Docs/>}/>
-        <Route path={'/music'} element={<MusicApp/>}/>
+        {/* <Route path={'/editor'} element={<EditorApp/>}/> */}
         <Route path={'/setting'} element={<Setting/>}/>
       </Routes> 
         <Menu/>
-        <MusicApp setVisibilityControl={setVisibilityControl} style={`fixed top-10 ${visibilityControl?'':'hidden'} `}/>
+        <MusicApp setVisibilityControl={setVisibilityControl} visibilityControl={visibilityControl} style={`fixed top-10 ${visibilityControl.music ?'':'hidden'} `}/>
+        <EditorApp setVisibilityControl={setVisibilityControl} visibilityControl={visibilityControl} style={`fixed top-10 ${visibilityControl.editor ?'':'hidden'} `}/>
         </main>
         
  </>   

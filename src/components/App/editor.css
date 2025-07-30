@@ -1,0 +1,99 @@
+.editor-container {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  min-height: 150px;
+  background: white;
+  height: 70vh;
+  overflow-y: scroll;
+  min-width:80vw;
+  max-width: 80vw;
+  text-align: left;
+}
+
+.editor-input {
+  outline: none;
+  min-height: 120px;
+}
+
+.editor-placeholder {
+  color: #aaa;
+  position: absolute;
+  pointer-events: none;
+}
+
+.editor-paragraph {
+  margin: 0 0 10px;
+}
+
+.editor-text-bold {
+  font-weight: bold;
+}
+
+.editor-text-italic {
+  font-style: italic;
+}
+
+.editor-text-underline {
+  text-decoration: underline;
+}
+
+.editor-text-strikethrough {
+  text-decoration: line-through;
+}
+
+.editor-text-code {
+  background-color: #eee;
+  font-family: monospace;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.editor-quote {
+  border-left: 4px solid #ccc;
+  padding-left: 10px;
+  color: #555;
+  margin: 10px 0;
+}
+
+.editor-heading-h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.editor-heading-h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.editor-heading-h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.editor-list-ol,
+.editor-list-ul {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.editor-listitem {
+  margin-bottom: 5px;
+}
+
+.editor-nested-listitem {
+  padding-left: 20px;
+}
+
+.editor-link {
+  color: blue;
+  text-decoration: underline;
+}
+
+.editor-code {
+  background-color: #f6f8fa;
+  padding: 8px;
+  border-radius: 6px;
+  font-family: monospace;
+  white-space: pre-wrap;
+}

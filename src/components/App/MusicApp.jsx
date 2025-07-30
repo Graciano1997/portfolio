@@ -1,15 +1,13 @@
-import { BarChart4, ChevronLeft, ChevronRight,HeartCrack,HeartIcon,HeartPlusIcon,HeartPulseIcon,LucideListMusic,Minimize,Minimize2Icon,Minus,MinusSquareIcon,Music2,Music3Icon,Music4Icon,MusicIcon,PauseCircleIcon, PlayCircleIcon} from "lucide-react";
-import { MusicItem } from "./MusicItem";
-import { Search } from "./Search";
-import { useNavigate } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import {  ChevronLeft, ChevronRight,LucideListMusic,MusicIcon,PauseCircleIcon, PlayCircleIcon} from "lucide-react";
+import { MusicItem } from "../general/MusicItem";
+import { Search } from "../general/Search";
+import { useRef, useState } from "react";
 import musics from "../../data/musicData";
-import { MusicFooter } from "./musicFooter";
+import { AppFooter } from "../general/AppFooter";
+import { AppDesign } from "./AppDesign";
+import { MobileMunu } from "./MobileMenu";
 
-export const MusicApp = ({style,setVisibilityControl})=>{
-    const navegate=useNavigate();
-    const musicMobileRef=useRef(null);
-    const musicMenuContainer=useRef(null);
+export const MusicApp = ({style,setVisibilityControl,visibilityControl})=>{
     const [playing,setPlaying]=useState(false);
     const audioRef=useRef(null);  
     const [musicNumber,setMusicNumber]=useState(0);
@@ -19,46 +17,22 @@ export const MusicApp = ({style,setVisibilityControl})=>{
     
     return(
         <>
-        <div className={`${style}`}>
-        <div className="w-[100%] h-[100%] top-0 left-0 blur-sm">
-        </div>
-        <div className='
-        fixed bg-[#0F172A] w-[100%] h-[100%]
-        top-[0] left-[0] 
-        flex justify-center' style={{zIndex:2000}} >
-         <button
-         onClick={()=>{ 
-
-             setMobileMusicMenuIsOpen(true);
-            }}
-            style={{background:'transparent'}}
-            className="block md:hidden absolute text-red-500 
-            text-2xl bg-white p-1 rounded shadow  left-[5px]
-           top-[5px] transition-all duration-200 hover:bg-green-100"><LucideListMusic className="w-10 h-10 text-white"/></button>
-         <button
-         onClick={()=>{ 
-                setMusicToPlay(null);
-                setVisibilityControl(false);
-            }}
-            className="absolute text-red-500 
-            text-2xl bg-white p-1 rounded shadow  right-[5px]
-           top-[5px] transition-all duration-200 hover:bg-green-100">X</button>
-         <button
-         style={{background:'transparent'}}
-         onClick={()=>{ 
-                setVisibilityControl(false);
-            }}
-            className="absolute text-red-500 
-            text-2xl bg-white p-1 rounded shadow  right-20
-           top-[5px] transition-all duration-200 hover:bg-green-100">
-            <Minus className="w-5 h-5 text-white"/>
-           </button>
-
+        <AppDesign setMobileMusicMenuIsOpen={setMobileMusicMenuIsOpen} style={style} closeHandler={()=>{setMusicToPlay(null);setVisibilityControl({...visibilityControl,music:false});}} minimizeHandler={()=>{setVisibilityControl({...visibilityControl,music:false});}}>
             <div className=' mt-[4rem]  h-[85%]
              sm:h-[72vh] md:h-[87vh] xl:h-[87vh] md:overflow-y-auto shadow
              flex flex-col justify-center
              md:grid md:grid-cols-[80fr_2px_29fr] p-5'
               style={{zIndex:1000}}>
+            <button
+            onClick={()=>{ 
+             setMobileMusicMenuIsOpen(true);
+            }}
+            style={{background:'transparent'}}
+            className="block md:hidden absolute text-red-500 
+            text-2xl bg-white p-1 rounded shadow  left-[5px]
+           top-[5px] transition-all duration-200 hover:bg-green-100">
+            <LucideListMusic className="w-10 h-10 text-white"/>
+            </button>
 
               <div className="flex flex-col items-center justify-center gap-3">
                 <Search searchingPlaceholder={'Search for the music title or Author'} style={'absolute top-18 md:top-30 '}/>
@@ -110,7 +84,7 @@ export const MusicApp = ({style,setVisibilityControl})=>{
                     }}
                     style={{background:'transparent'}}><ChevronRight className="text-[#F1F5F9] w-20 h-20 md:w-35 md:h-35 cursor-pointer"/></button>
                 {musicToPlay && <audio onEnded={()=>{setPlaying(false);}} ref={audioRef} src={musicToPlay.music} autoPlay></audio>}
-                <MusicFooter style={'absolute bottom-5 left-5 text-white hidden md:flex '}/>
+                <AppFooter icon={<MusicIcon className="w-7 h-7 text-white"/>} style={'absolute bottom-5 left-5 text-white hidden md:flex'}/>
                 </div>
               </div>
               <div className="hidden md:block bg-white/50 w-[2px] h-[100%]"></div>
@@ -118,30 +92,8 @@ export const MusicApp = ({style,setVisibilityControl})=>{
                {musics.map((item)=><MusicItem musicToPlay={musicToPlay} item={item} setPlaying={setPlaying} setMusicToPlay={setMusicToPlay} />)}
                 </div>
             </div>
-        </div>
-        
-        {
-            mobileMusicMenuIsOpen && 
-            (
-                <div ref={musicMenuContainer} onClick={(el)=>{
-                    el.stopPropagation();
-                    if(el.target.contains(musicMobileRef.current)){
-                        setMobileMusicMenuIsOpen(false);
-                    }
-                    
-                }} className='md:hidden fixed w-[100%] h-[100%] top-[0] left-[0]' style={{zIndex:2100}} >
-        
-        <div ref={musicMobileRef} className='w-[70%] h-[100%] bg-black
-        pt-2
-        flex flex-col items-center gap-3 overflow-y-scroll' style={{zIndex:2500}} >
-           {musics.map((item)=><MusicItem item={item} musicToPlay={musicToPlay} setPlaying={setPlaying} setMusicToPlay={setMusicToPlay} />)}
-           <MusicFooter style={'absolute bottom-5 text-white'}/>
-        </div>
-
-        </div>
-            )
-        }
-        </div>
+        <MobileMunu mobileMusicMenuIsOpen={mobileMusicMenuIsOpen} setMobileMusicMenuIsOpen={setMobileMusicMenuIsOpen} musics={musics} setPlaying={setPlaying} musicToPlay={musicToPlay} setMusicToPlay={setMusicToPlay} />
+        </AppDesign>
         </>
     );
 };

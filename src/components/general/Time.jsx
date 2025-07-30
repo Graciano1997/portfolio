@@ -8,8 +8,6 @@ export const Time = () => {
         const date= new Date();
         setTime({hour:date.getHours(),minutes:date.getMinutes()});
     },1000);
-
-    console.log(new Date());
     return (
         <div className="text-white right-3  h-[70px] fixed top-5  flex   gap-1 ">
             <div className="flex flex-col ">
