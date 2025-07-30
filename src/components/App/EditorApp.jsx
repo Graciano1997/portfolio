@@ -69,11 +69,19 @@ export default function EditorApp({ style, setVisibilityControl, visibilityContr
         setMobileMusicMenuIsOpen={setMobileMusicMenuIsOpen}
         style={style}
         closeHandler={() =>{ 
-           const confirmed = confirm('Are you sure you want close the editor?');
-             if (confirmed) {
+           
+          if(text.length>0){
+
+            const confirmed = confirm('You will lose all the modifications... \n Are you sure you want close the editor?');
+
+            if (confirmed){
               buttonRef.current.click();
-              setFilename(defaultName); setText(''); setVisibilityControl({ ...visibilityControl, editor: false })}}
-              }
+              setFilename(defaultName); setText(''); setVisibilityControl({ ...visibilityControl, editor: false });
+            } 
+            }else{
+              setFilename(defaultName); setText(''); setVisibilityControl({ ...visibilityControl, editor: false })
+            }}
+           }
 
         minimizeHandler={() => setVisibilityControl({ ...visibilityControl, editor: false })}
       >
