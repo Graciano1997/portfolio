@@ -1,7 +1,7 @@
 import { Calculator, Calendar, CloudIcon, CloudSunIcon, CloudSunRain, Music, SquarePenIcon } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 
-export const Shortcut=()=>{
+export const Shortcut=({visibilityControl})=>{
     const navegate = useNavigate();
 
     return(
@@ -11,7 +11,7 @@ export const Shortcut=()=>{
     <SquarePenIcon className="color-red-200 h-10 w-10 cursor-pointer"/>
     <CloudSunIcon className="color-red-200 h-10 w-10 cursor-pointer"/>
     <Music onClick={()=>{
-        navegate('/music');
+        visibilityControl(true);
     }}  className="color-red-200 h-10 w-10 cursor-pointer" />
     <Calculator className="color-red-200 h-10 w-10 cursor-pointer"/>
     <Calendar className="color-red-200 h-10 w-10 cursor-pointer"/>

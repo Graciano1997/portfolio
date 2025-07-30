@@ -1,4 +1,4 @@
-import { BarChart4, ChevronLeft, ChevronRight,HeartCrack,HeartIcon,HeartPlusIcon,HeartPulseIcon,LucideListMusic,Music2,Music3Icon,Music4Icon,MusicIcon,PauseCircleIcon, PlayCircleIcon} from "lucide-react";
+import { BarChart4, ChevronLeft, ChevronRight,HeartCrack,HeartIcon,HeartPlusIcon,HeartPulseIcon,LucideListMusic,Minimize,Minimize2Icon,Minus,MinusSquareIcon,Music2,Music3Icon,Music4Icon,MusicIcon,PauseCircleIcon, PlayCircleIcon} from "lucide-react";
 import { MusicItem } from "./MusicItem";
 import { Search } from "./Search";
 import { useNavigate } from "react-router-dom";
@@ -6,24 +6,20 @@ import { useEffect, useRef, useState } from "react";
 import musics from "../../data/musicData";
 import { MusicFooter } from "./musicFooter";
 
-export const MusicApp = ()=>{
+export const MusicApp = ({style,setVisibilityControl})=>{
     const navegate=useNavigate();
     const musicMobileRef=useRef(null);
     const musicMenuContainer=useRef(null);
     const [playing,setPlaying]=useState(false);
-    const audioRef=useRef(null);
-    
+    const audioRef=useRef(null);  
     const [musicNumber,setMusicNumber]=useState(0);
     const musicCounter=musics.length;
-
     const [musicToPlay,setMusicToPlay]=useState(null);
-
-
-
     const [mobileMusicMenuIsOpen,setMobileMusicMenuIsOpen]=useState(false);
     
     return(
         <>
+        <div className={`${style}`}>
         <div className="w-[100%] h-[100%] top-0 left-0 blur-sm">
         </div>
         <div className='
@@ -33,23 +29,30 @@ export const MusicApp = ()=>{
          <button
          onClick={()=>{ 
 
-            setMobileMusicMenuIsOpen(true);
-        }}
-        style={{background:'transparent'}}
-          className="block md:hidden absolute text-red-500 
-          text-2xl bg-white p-1 rounded shadow  left-[5px]
+             setMobileMusicMenuIsOpen(true);
+            }}
+            style={{background:'transparent'}}
+            className="block md:hidden absolute text-red-500 
+            text-2xl bg-white p-1 rounded shadow  left-[5px]
            top-[5px] transition-all duration-200 hover:bg-green-100"><LucideListMusic className="w-10 h-10 text-white"/></button>
          <button
          onClick={()=>{ 
-          // dispatch(closeModal());
-          // if(helper !=undefined){
-          //   dispatch(helper());
-          // }
-          navegate('/');
-        }}
-          className="absolute text-red-500 
-          text-2xl bg-white p-1 rounded shadow  right-[5px]
+                setMusicToPlay(null);
+                setVisibilityControl(false);
+            }}
+            className="absolute text-red-500 
+            text-2xl bg-white p-1 rounded shadow  right-[5px]
            top-[5px] transition-all duration-200 hover:bg-green-100">X</button>
+         <button
+         style={{background:'transparent'}}
+         onClick={()=>{ 
+                setVisibilityControl(false);
+            }}
+            className="absolute text-red-500 
+            text-2xl bg-white p-1 rounded shadow  right-20
+           top-[5px] transition-all duration-200 hover:bg-green-100">
+            <Minus className="w-5 h-5 text-white"/>
+           </button>
 
             <div className=' mt-[4rem]  h-[85%]
              sm:h-[72vh] md:h-[87vh] xl:h-[87vh] md:overflow-y-auto shadow
@@ -58,16 +61,16 @@ export const MusicApp = ()=>{
               style={{zIndex:1000}}>
 
               <div className="flex flex-col items-center justify-center gap-3">
-                <Search searchingPlaceholder={'Search for music title or Author'} style={'absolute top-18 md:top-30 '}/>
+                <Search searchingPlaceholder={'Search for the music title or Author'} style={'absolute top-18 md:top-30 '}/>
                 <div className="flex gap-2 mt-10">
                     <button onClick={
                         ()=>{
                         if(musicNumber>0){
-                        setMusicToPlay(musics[musicNumber-1]);
-                        setMusicNumber(musicNumber-1);
-                        setPlaying(true);
+                            setMusicToPlay(musics[musicNumber-1]);
+                            setMusicNumber(musicNumber-1);
+                            setPlaying(true);
                         }
-                        }
+                    }
                     } style={{background:'transparent', outlineColor:'transparent'}}>
                         <ChevronLeft className="w-20 h-20 md:w-35 md:h-35  text-[#F1F5F9] cursor-pointer"/>
                         </button>
@@ -77,14 +80,15 @@ export const MusicApp = ()=>{
                             if(musicToPlay && !audioRef.current.paused){
                                 audioRef.current.pause();
                                 setPlaying(false);
+                                console.log(audioRef.current)
                             }                            
                         }} style={{background:'transparent'}}><PauseCircleIcon className="text-[#F1F5F9] w-20 h-20 md:w-35 md:h-35  cursor-pointer"/></button>
-                        )}
+                    )}
 
 
                     {(!playing) && (
                         <button
-                         onClick={()=>{
+                        onClick={()=>{
                             if(musicToPlay){
                                 audioRef.current.play();
                                 setPlaying(true);
@@ -98,14 +102,14 @@ export const MusicApp = ()=>{
                     <button
                     onClick={()=>{
                         if(musicNumber<musicCounter-1 && musicCounter>0){
-                        setMusicToPlay(musics[musicNumber+1]);
-                        setMusicNumber(musicNumber+1);
-                        setPlaying(true);
-                    }
-
+                            setMusicToPlay(musics[musicNumber+1]);
+                            setMusicNumber(musicNumber+1);
+                            setPlaying(true);
+                        }
+                        
                     }}
                     style={{background:'transparent'}}><ChevronRight className="text-[#F1F5F9] w-20 h-20 md:w-35 md:h-35 cursor-pointer"/></button>
-                {musicToPlay && <audio ref={audioRef} src={musicToPlay.music} autoPlay></audio>}
+                {musicToPlay && <audio onEnded={()=>{setPlaying(false);}} ref={audioRef} src={musicToPlay.music} autoPlay></audio>}
                 <MusicFooter style={'absolute bottom-5 left-5 text-white hidden md:flex '}/>
                 </div>
               </div>
@@ -124,7 +128,7 @@ export const MusicApp = ()=>{
                     if(el.target.contains(musicMobileRef.current)){
                         setMobileMusicMenuIsOpen(false);
                     }
-                        
+                    
                 }} className='md:hidden fixed w-[100%] h-[100%] top-[0] left-[0]' style={{zIndex:2100}} >
         
         <div ref={musicMobileRef} className='w-[70%] h-[100%] bg-black
@@ -137,6 +141,7 @@ export const MusicApp = ()=>{
         </div>
             )
         }
+        </div>
         </>
     );
 };

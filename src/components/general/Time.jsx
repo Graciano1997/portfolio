@@ -1,4 +1,4 @@
-import { CloudSun, LucideCloudSun } from "lucide-react"
+import { LucideCloudSun } from "lucide-react"
 
 export const Time = () => {
     return (
