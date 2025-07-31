@@ -116,7 +116,7 @@ export default function EditorApp({ style, setVisibilityControl, visibilityContr
             className='
             mb-2 flex
           block  absolute text-white 
-          h-[25px] w-[50%] md:w-80
+          h-[25px] w-[40%] md:w-80
             text-2xl bg-white p-1 rounded shadow  left-20
            top-6 transition-all duration-200 hover:bg-green-100  rounded bg-white ' placeholder='Note title'/>
           )
