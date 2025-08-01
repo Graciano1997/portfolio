@@ -13,7 +13,12 @@ export const Shortcut=({visibilityControl,setVisibilityControl})=>{
         setVisibilityControl({...visibilityControl,editor:true});
     }}
     className="color-red-200 h-10 w-10 cursor-pointer"/>
-    <CloudSunIcon className="color-red-200 h-10 w-10 cursor-pointer"/>
+    <CloudSunIcon 
+      onClick={()=>{
+        setVisibilityControl({...visibilityControl,weather:true});
+    }}
+
+    className="color-red-200 h-10 w-10 cursor-pointer"/>
     <Music onClick={()=>{
         setVisibilityControl({...visibilityControl,music:true});
     }}  className="color-red-200 h-10 w-10 cursor-pointer" />

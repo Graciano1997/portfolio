@@ -9,9 +9,10 @@ import { Setting } from './components/Setting'
 import { useState } from 'react'
 import EditorApp from './components/App/EditorApp'
 import { MusicApp } from './components/App/MusicApp'
+import { WeatherApp } from './components/App/WeatherApp'
 
 function App() {
-  const [visibilityControl,setVisibilityControl]=useState({music:false,editor:false});
+  const [visibilityControl,setVisibilityControl]=useState({music:false,editor:false,weather:false});
   return (
  <>
       <main className='w-full h-full flex justify-center'>
@@ -26,6 +27,7 @@ function App() {
         <Menu/>
         <MusicApp setVisibilityControl={setVisibilityControl} visibilityControl={visibilityControl} style={`fixed top-10 ${visibilityControl.music ?'':'hidden'} `}/>
         <EditorApp setVisibilityControl={setVisibilityControl} visibilityControl={visibilityControl} style={`fixed top-10 ${visibilityControl.editor ?'':'hidden'} `}/>
+        <WeatherApp setVisibilityControl={setVisibilityControl} visibilityControl={visibilityControl} style={`fixed top-10 ${visibilityControl.weather ?'':'hidden'} `}/>
         </main>
         
  </>   
