@@ -45,7 +45,7 @@ export const Equation2Grad=()=>{
 
             </div>
 
-            {mathState.result.delta>=0 &&(
+            {mathState.result.delta!=null  &&(
 
                 <div className="flex flex-wrap sm:grid sm:grid-cols-3  gap-5 mt-5 ">
                 <div className="w-[50%] ">
