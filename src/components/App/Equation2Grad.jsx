@@ -51,10 +51,10 @@ export const Equation2Grad=()=>{
                 <h3 className="text-white text-start">
                 1º Step
                 </h3>
-                <div className="flex text-white mt-5">
+                <div className="flex text-white mt-5 sm:w-100">
                 <TriangleIcon className="text-white w-5 h-5"/>= b<sup>2</sup> - 4.a.c
                 </div>
-                <div className="flex text-white mt-5">
+                <div className="flex sm:w-100 text-white mt-5">
                 <TriangleIcon className="text-white w-5 h-5"/>= ({mathState.constants.b})<sup>2</sup> - 4.{`${mathState.constants.a}.${mathState.constants.c}`}
                 </div>
                 <div className="flex text-white mt-5">
