@@ -92,7 +92,7 @@ export const MusicApp = ({style,setVisibilityControl,visibilityControl})=>{
                {musics.map((item)=><MusicItem musicToPlay={musicToPlay} item={item} setPlaying={setPlaying} setMusicToPlay={setMusicToPlay} />)}
                 </div>
             </div>
-        <MobileMunu mobileMusicMenuIsOpen={mobileMusicMenuIsOpen} setMobileMusicMenuIsOpen={setMobileMusicMenuIsOpen} musics={musics} setPlaying={setPlaying} musicToPlay={musicToPlay} setMusicToPlay={setMusicToPlay} />
+        <MobileMunu menuType={{music:true,math:false}} icon={<MusicIcon className="w-7 h-7 text-white"/>} mobileMusicMenuIsOpen={mobileMusicMenuIsOpen} setMobileMusicMenuIsOpen={setMobileMusicMenuIsOpen} musics={musics} setPlaying={setPlaying} musicToPlay={musicToPlay} setMusicToPlay={setMusicToPlay} />
         </AppDesign>
         </>
     );

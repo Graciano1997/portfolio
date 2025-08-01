@@ -12,10 +12,10 @@ import { MusicApp } from './components/App/MusicApp'
 import { WeatherApp } from './components/App/WeatherApp'
 import { useDispatch } from 'react-redux'
 import { setTime } from './components/Slices/appSlice'
-import { CalculatorApp } from './components/App/CalculatorApp'
+import { MathApp } from './components/App/MathApp'
 
 function App() {
-  const [visibilityControl,setVisibilityControl]=useState({music:false,editor:false,weather:false,calculator:false});
+  const [visibilityControl,setVisibilityControl]=useState({music:false,editor:false,weather:false,mathApp:false});
   const dispatch = useDispatch();
 
       setInterval(()=>{
@@ -36,7 +36,11 @@ function App() {
         <MusicApp setVisibilityControl={setVisibilityControl} visibilityControl={visibilityControl} style={`fixed top-10 ${visibilityControl.music ?'':'hidden'} `}/>
         <EditorApp setVisibilityControl={setVisibilityControl} visibilityControl={visibilityControl} style={`fixed top-10 ${visibilityControl.editor ?'':'hidden'} `}/>
         <WeatherApp setVisibilityControl={setVisibilityControl} visibilityControl={visibilityControl} style={`fixed top-10 ${visibilityControl.weather ?'':'hidden'} `}/>
-        <CalculatorApp setVisibilityControl={setVisibilityControl} visibilityControl={visibilityControl} style={`fixed top-10 ${visibilityControl.calculator ?'':'hidden'} `}/>
+        {
+        visibilityControl.mathApp && (
+          <MathApp setVisibilityControl={setVisibilityControl} visibilityControl={visibilityControl} style={`fixed top-10 ${visibilityControl.mathApp ?'':'hidden'} `}/>
+        )       
+        }
         </main>
         
  </>   

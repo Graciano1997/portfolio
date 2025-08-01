@@ -1,4 +1,4 @@
-import { Calculator, Calendar, CloudIcon, CloudSunIcon, CloudSunRain, Music, SquarePenIcon } from "lucide-react"
+import { Calculator, Calendar, CloudIcon, CloudSunIcon, CloudSunRain, InfinityIcon, LucideOmega, Music, PiIcon, SquarePenIcon } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 
 export const Shortcut=({visibilityControl,setVisibilityControl})=>{
@@ -22,9 +22,9 @@ export const Shortcut=({visibilityControl,setVisibilityControl})=>{
     <Music onClick={()=>{
         setVisibilityControl({...visibilityControl,music:true});
     }}  className="color-red-200 h-10 w-10 cursor-pointer" />
-    <Calculator
+    <PiIcon
     onClick={()=>{
-        setVisibilityControl({...visibilityControl,calculator:true});
+        setVisibilityControl({...visibilityControl,mathApp:true});
     }}
     className="color-red-200 h-10 w-10 cursor-pointer"/>
     {/* <Calendar className="color-red-200 h-10 w-10 cursor-pointer"/> */}
