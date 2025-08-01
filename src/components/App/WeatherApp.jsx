@@ -1,6 +1,6 @@
 import React, {useEffect, useState } from 'react';
 import { AppDesign } from './AppDesign';
-import { CloudSunRainIcon,CrossIcon,LoaderCircleIcon,LucideX,Sunset } from 'lucide-react';
+import { CloudSunRainIcon,LoaderCircleIcon,LucideX } from 'lucide-react';
 import { AppFooter } from '../general/AppFooter';
 import { Search } from '../general/Search';
 import { WeatherCard } from './WeatherCard';
@@ -9,7 +9,6 @@ import { cleanWeather, setSearching, weatherFetch } from '../Slices/appSlice';
 
 
 export const  WeatherApp=({ style, setVisibilityControl, visibilityControl })=> {
-  const date= new Date();  
   const [mobileMusicMenuIsOpen, setMobileMusicMenuIsOpen] = useState(false);
   const dispatch = useDispatch();
   
@@ -34,7 +33,7 @@ export const  WeatherApp=({ style, setVisibilityControl, visibilityControl })=> 
             dispatch(weatherFetch(appState.query));          
           }}
 
-           searchingPlaceholder={'Enter the Province or city name'} style={'mt-2'}/>
+           searchingPlaceholder={`Enter the Province or city's name`} style={'mt-2'}/>
           <div className='w-[80vw] mb-[-30px]'>
           {weatherData &&
           <h2 className='text-3xl text-white text-start'>{weatherData.resolvedAddress}</h2>
