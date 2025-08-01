@@ -1,4 +1,4 @@
-import {  MenuIcon,PiIcon} from "lucide-react";
+import {  DivideIcon, EqualIcon, InfinityIcon, LucideOmega, MenuIcon,PiIcon, WholeWordIcon} from "lucide-react";
 
 import { useRef, useState } from "react";
 import { AppFooter } from "../general/AppFooter";
@@ -9,6 +9,7 @@ import { Equation2Grad } from "./Equation2Grad";
 import { useDispatch } from "react-redux";
 import { cleanAll } from "../Slices/mathSlice";
 import { Equation2Sys } from "./Equation2Sys";
+import { Equation3Sys } from "./Equation3Sys";
 
 export const MathApp = ({style,setVisibilityControl,visibilityControl})=>{
     const dispatch = useDispatch();
@@ -51,8 +52,17 @@ export const MathApp = ({style,setVisibilityControl,visibilityControl})=>{
                     }
                     {
                         operationToPlay.IIIEquationSys && (
-                            <div>3 Sys Equation</div>  
+                            <Equation3Sys/>   
                         )
+                    }
+
+                    {
+                        (!operationToPlay.IIgradEquation &&
+                        !operationToPlay.IIEquationSys &&
+                        !operationToPlay.IIIEquationSys) &&(
+                            <h2 className="text-white flex flex-wrap items-center justify-center gap-2 text-3xl">Welcome at Math Essentials<InfinityIcon className="w-8 h-8 text-white"/><LucideOmega className="w-8 h-8 text-white"/><PiIcon className="w-8 h-8 text-white"/><EqualIcon className="w-8 h-8 text-white"/><DivideIcon className="w-8 h-8 text-white"/></h2>
+                        )
+
                     }
       
                 <AppFooter icon={<PiIcon className="w-7 h-7 text-white"/>} style={'absolute bottom-5 left-5 text-white hidden md:flex'}/>
