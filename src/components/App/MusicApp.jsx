@@ -35,7 +35,7 @@ export const MusicApp = ({style,setVisibilityControl,visibilityControl})=>{
             </button>
 
               <div className="flex flex-col items-center justify-center gap-3">
-                <Search searchingPlaceholder={'Search for the music title or Author'} style={'absolute top-18 md:top-30 '}/>
+                {/* <Search searchingPlaceholder={'Search for the music title or Author'} style={'absolute top-18 md:top-30 '}/> */}
                 <div className="flex gap-2 mt-10">
                     <button onClick={
                         ()=>{

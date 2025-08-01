@@ -8,6 +8,7 @@ import { MathItem } from "../general/MathItem";
 import { Equation2Grad } from "./Equation2Grad";
 import { useDispatch } from "react-redux";
 import { cleanAll } from "../Slices/mathSlice";
+import { Equation2Sys } from "./Equation2Sys";
 
 export const MathApp = ({style,setVisibilityControl,visibilityControl})=>{
     const dispatch = useDispatch();
@@ -45,7 +46,7 @@ export const MathApp = ({style,setVisibilityControl,visibilityControl})=>{
                     }
                     {
                         operationToPlay.IIEquationSys && (
-                            <div>2 Sys Equation</div>  
+                            <Equation2Sys/>  
                         )
                     }
                     {
