@@ -11,14 +11,15 @@ const themeSlice = createSlice({
     initialState: initialState,
     reducers: {
         defaultTheme: (state) => {
-            state.background = state.defaultBackground;
+            state.background = null;
+            state.background = wallpaper[0];
         },
-        setBackground: (state, action) => {
+        setBackground: (state,action) => {
             state.background = action.payload;
-        }
+         }
     }
 });
 
 export default themeSlice.reducer;
 
-export const { defaultTheme, setBackground } = themeSlice.reducer;
+export const { defaultTheme, setBackground } = themeSlice.actions;

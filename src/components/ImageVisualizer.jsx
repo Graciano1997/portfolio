@@ -1,14 +1,17 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
-export const ImageVisualizer = ({images, style={}}) => {
+export const ImageVisualizer = ({images, style={},dispatcher=()=>{}}) => {
     const imagesCount=images.length;    
     const [imageNumber,setImageNumber]=useState(0);
+    const dispatch = useDispatch();
 
     const changeHandler =(element)=>{
-        console.log(element);
+        dispatch(dispatcher(element));
     }
 
+    console.log(images);
  
     return (
         <div className="grid grid-cols-[5fr_90fr_5fr] gap-1">
@@ -16,8 +19,8 @@ export const ImageVisualizer = ({images, style={}}) => {
                 <button style={style}  onClick={()=>{
                     if(imageNumber>0){
                         setImageNumber(imageNumber-1);
+                        changeHandler(images[imageNumber-1]);
                     }
-                    changeHandler(images[imageNumber-1]);
                 }} 
                 className="p-0 flex items-center justify-center rounded-full">
                     <ArrowLeft 
@@ -32,8 +35,8 @@ export const ImageVisualizer = ({images, style={}}) => {
                 onClick={()=>{
                     if(imageNumber<imagesCount-1 && imagesCount>0){
                         setImageNumber(imageNumber+1);
+                        changeHandler(images[imageNumber+1]);
                     }
-                    changeHandler(images[imageNumber+1]);
                 }}
                  className="p-0 flex items-center justify-center rounded-full">
                     <ArrowRight className={`w-5 h-5 ${imageNumber===imagesCount-1 || imagesCount===1 ? 'text-red-200':'text-black'}`} />

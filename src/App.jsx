@@ -10,26 +10,23 @@ import { useState } from 'react'
 import EditorApp from './components/App/EditorApp'
 import { MusicApp } from './components/App/MusicApp'
 import { WeatherApp } from './components/App/WeatherApp'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { setTime } from './components/Slices/appSlice'
 import { MathApp } from './components/App/MathApp'
-import { wallpaper } from './data/wallpaper'
-import imgdefault from './img/wallpaper/blob.png'
 
 
 function App() {
   const [visibilityControl,setVisibilityControl]=useState({music:false,editor:false,weather:false,mathApp:false});
   const dispatch = useDispatch();
-
+  const theme=useSelector((state)=>state.themeState);
       setInterval(()=>{
         dispatch(setTime());
       },1000);
 
-      console.log(wallpaper[0]);
 
   return (
- <>
-      <main className={`w-full h-full flex justify-center`}>
+ <>  
+      <main className={`w-full h-full flex justify-center `} style={{backgroundSize:'cover',backgroundRepeat:'no-repeat',background:`url(${theme.background?theme.background:theme.defaultBackground})`}}  >
       <Routes>
         <Route path={'/'} element={<Main visibilityControl={visibilityControl}  setVisibilityControl={setVisibilityControl} />}/>
         <Route path={'/apps'} element={<Apps/>}/>

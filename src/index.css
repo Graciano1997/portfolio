@@ -23,7 +23,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background: url(../src/img/wallpaper/blue.png);
+  /* background: url(../src/img/wallpaper/blue.png); */
   background-repeat: no-repeat;
   background-size: cover;
 }
