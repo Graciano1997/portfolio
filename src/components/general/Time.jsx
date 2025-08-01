@@ -1,13 +1,9 @@
 import { LucideCloudSun, LucideMoon } from "lucide-react"
-import { useState } from "react";
+import { useSelector } from "react-redux"
 
 export const Time = () => {
-    const [time,setTime]=useState({hour:0,minutes:0});
+    const {time}=useSelector((state)=>state.appState);
     
-    setInterval(()=>{
-        const date= new Date();
-        setTime({hour:date.getHours(),minutes:date.getMinutes()});
-    },1000);
     return (
         <div className="text-white right-3  h-[70px] fixed top-5  flex   gap-1 ">
             <div className="flex flex-col ">

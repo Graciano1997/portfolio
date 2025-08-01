@@ -7,6 +7,7 @@ const initialState={
     weather:null,
     query:'',
     searching:false,
+    time:{hour:0,minutes:0}
 };
 
 export const weatherFetch=createAsyncThunk("appSlice/weatherFetch",async(province,{rejectWithValue})=>{    
@@ -47,6 +48,10 @@ const appSlice=createSlice({
         },
         setSearching:(state,action)=>{
             state.searching=action.payload;
+        },
+        setTime:(state)=>{
+          const date= new Date();
+          state.time={hour:date.getHours(),minutes:date.getMinutes()};
         }
     },
 
@@ -72,4 +77,4 @@ const appSlice=createSlice({
 
 export default appSlice.reducer;
 
-export const {openModal,closeModal, setQuery, cleanWeather, setSearching}=appSlice.actions;
+export const {openModal,closeModal, setQuery, cleanWeather, setSearching, setTime}=appSlice.actions;

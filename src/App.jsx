@@ -10,9 +10,17 @@ import { useState } from 'react'
 import EditorApp from './components/App/EditorApp'
 import { MusicApp } from './components/App/MusicApp'
 import { WeatherApp } from './components/App/WeatherApp'
+import { useDispatch } from 'react-redux'
+import { setTime } from './components/Slices/appSlice'
 
 function App() {
   const [visibilityControl,setVisibilityControl]=useState({music:false,editor:false,weather:false});
+  const dispatch = useDispatch();
+
+      setInterval(()=>{
+        dispatch(setTime());
+      },1000);
+
   return (
  <>
       <main className='w-full h-full flex justify-center'>
@@ -21,7 +29,6 @@ function App() {
         <Route path={'/apps'} element={<Apps/>}/>
         <Route path={'/about'} element={<About/>}/>
         <Route path={'/docs'} element={<Docs/>}/>
-        {/* <Route path={'/editor'} element={<EditorApp/>}/> */}
         <Route path={'/setting'} element={<Setting/>}/>
       </Routes> 
         <Menu/>

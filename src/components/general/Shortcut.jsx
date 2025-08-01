@@ -23,7 +23,7 @@ export const Shortcut=({visibilityControl,setVisibilityControl})=>{
         setVisibilityControl({...visibilityControl,music:true});
     }}  className="color-red-200 h-10 w-10 cursor-pointer" />
     <Calculator className="color-red-200 h-10 w-10 cursor-pointer"/>
-    <Calendar className="color-red-200 h-10 w-10 cursor-pointer"/>
+    {/* <Calendar className="color-red-200 h-10 w-10 cursor-pointer"/> */}
 
     </div>
     )
