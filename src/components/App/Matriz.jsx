@@ -8,7 +8,7 @@ export const Matriz = ({iconComponent,constants={a1:'a1',a2:'a2',b1:'b1',b2:'b2'
                 <div className="p-2">{constants.a2}</div>
                 <div className="p-2">{constants.b2}</div>
             </div>
-            = {`(${constants.a1}.${constants.b2} - ${constants.a2}.${constants.b1})`}
+            = {`(${constants.a1}.${constants.b2} - (${constants.a2}.${constants.b1}))`}
         </div>
     )
 }

@@ -9,24 +9,27 @@ export const Equation2Sys=()=>{
     const mathState=useSelector((state)=>state.mathState);
     const dispach = useDispatch();
 
-    console.log(mathState);
     const constsHandler=(element)=>{
         if(element.target.value==''){
-            dispach(setSys2Constants({...mathState.sys2Constants,[element.target.name]:null}))
+            dispach(setSys2Constants({...mathState.sys2Constants,[element.target.name]:''}))
         }else{
             dispach(setSys2Constants({...mathState.sys2Constants,[element.target.name]:element.target.value*1}));
           }
     }
 
     const calcHandler = ()=>{
-
         const deltaCalc = (mathState.sys2Constants.a1*mathState.sys2Constants.b2 + (-1*mathState.sys2Constants.a2*mathState.sys2Constants.b1));
         const deltaX = (mathState.sys2Constants.c1*mathState.sys2Constants.b2 + (-1*mathState.sys2Constants.c2*mathState.sys2Constants.b1));
         const deltaY = (mathState.sys2Constants.a1*mathState.sys2Constants.c2 + (-1*mathState.sys2Constants.a2*mathState.sys2Constants.c1));
         const x= deltaX / deltaCalc;
         const y= deltaY / deltaCalc;
-        
-        dispach(setSys2Result({d:deltaCalc,dx:deltaX,dy:deltaX,x:x,y:y}));
+
+        // console.log(deltaCalc);
+        //  console.log(deltaX);
+        // console.log(deltaY);
+        // console.log(x);
+        // console.log(y);
+        dispach(setSys2Result({d:deltaCalc,dx:deltaX,dy:deltaY,x:x,y:y}));
     }
 
     return(
@@ -64,6 +67,10 @@ export const Equation2Sys=()=>{
             </div>
 
                 <div className="flex flex-wrap sm:grid sm:grid-cols-3  gap-5 mt-5 ">
+                {
+                 mathState.sys2Result.d!=null
+                && 
+                <>
                 <div className="">
                 <h3 className="text-white text-start">
                 1º Step
@@ -103,6 +110,10 @@ export const Equation2Sys=()=>{
                 <p className="text-red-400 text-xl">y = {mathState.sys2Result.y} </p> 
                 </div>
                 </div>
+                </>
+                }
+
+
             </div>          
             </div>
     )

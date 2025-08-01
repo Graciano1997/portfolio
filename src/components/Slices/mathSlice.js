@@ -19,6 +19,7 @@ const mathSlice = createSlice({
             state.result=action.payload
         },
         setSys2Result:(state,action)=>{
+            console.log(action.payload);
             state.sys2Result=action.payload
         },
         cleanAll:(state)=>{
