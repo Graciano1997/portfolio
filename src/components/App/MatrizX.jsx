@@ -2,7 +2,7 @@ export const MatrizX = ({iconComponent,sysNumber=2, constants={d1:'d1',d2:'d2',d
     return (
         <div className="flex text-white mt-5 items-center gap-2">
             {
-                sysNumber==3 && (
+                sysNumber==2 && (
                    <>
                 {iconComponent}=
                 <div className="grid grid-cols-2 grid-rows-2 p-1" style={{ borderLeft: '2px solid white', borderRight: '2px solid white' }}>
@@ -16,7 +16,7 @@ export const MatrizX = ({iconComponent,sysNumber=2, constants={d1:'d1',d2:'d2',d
                 )
             }
 
-            {sysNumber==2 &&
+            {sysNumber==3 &&
             (
                 <>
                 {iconComponent}=

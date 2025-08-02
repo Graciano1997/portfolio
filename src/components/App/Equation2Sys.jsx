@@ -24,11 +24,6 @@ export const Equation2Sys=()=>{
         const x= deltaX / deltaCalc;
         const y= deltaY / deltaCalc;
 
-        // console.log(deltaCalc);
-        //  console.log(deltaX);
-        // console.log(deltaY);
-        // console.log(x);
-        // console.log(y);
         dispach(setSys2Result({d:deltaCalc,dx:deltaX,dy:deltaY,x:x,y:y}));
     }
 
