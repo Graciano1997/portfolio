@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
+
 const initialState={
     isModalOpend:false,
     isLoading:false,
@@ -7,7 +8,7 @@ const initialState={
     weather:null,
     query:'',
     searching:false,
-    time:{hour:0,minutes:0}
+    time:{hour:0,minutes:0},
 };
 
 export const weatherFetch=createAsyncThunk("appSlice/weatherFetch",async(province,{rejectWithValue})=>{    

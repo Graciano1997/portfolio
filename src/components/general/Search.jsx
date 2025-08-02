@@ -2,8 +2,9 @@ import { SearchIcon, XIcon } from "lucide-react"
 import { useRef } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { setQuery, setSearching } from "../Slices/appSlice";
+import { Projects } from "../../data/Projects";
 
-export const Search = ({dispatcher, searchingPlaceholder="Searching",style}) => {
+export const Search = ({projects=[], dispatcher=null, searchingPlaceholder="Searching",style}) => {
     
     const inputRef= useRef(null);
     const dispatch = useDispatch();
@@ -23,6 +24,7 @@ export const Search = ({dispatcher, searchingPlaceholder="Searching",style}) => 
             if(element.target.value==''){
                 dispatch(setSearching(false));
                 dispatch(setQuery(''));
+                if(dispatcher){dispatcher(Projects())}
             }else{
                 dispatch(setQuery(element.target.value));
                 dispatch(setSearching(true));
@@ -34,11 +36,12 @@ export const Search = ({dispatcher, searchingPlaceholder="Searching",style}) => 
             className="ml-2 h-10 w-[90%] rounded-full text-black p-5 outline-none" />
             {appState.searching && (
                 <>
-                <button onClick={()=>{dispatcher()}}><SearchIcon className="w-5 w-5 text-black "/></button>
+                <button onClick={()=>{if(dispatcher){dispatcher(projects.filter((project)=>project.title.includes(appState.query)))}}}><SearchIcon className="w-5 w-5 text-black "/></button>
                 <button className="bg-black mr-2" onClick={()=>{
                     inputRef.current.value='';
                     dispatch(setQuery(''));
                     dispatch(setSearching(false));
+                    if(dispatcher){dispatcher(Projects())}
                 }}>
                 <XIcon className="text-black w-5 h-5"/>
             </button>
