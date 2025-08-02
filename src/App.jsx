@@ -26,7 +26,7 @@ function App() {
 
   return (
  <>  
-      <main className={`w-full h-full flex justify-center`} style={{objectFit:'fill' , backgroundSize:'cover',backgroundRepeat:'no-repeat',background:`url(${theme.background?theme.background:theme.defaultBackground})`}}  >
+      <main className={`w-full h-full flex justify-center`} style={{background:`url(${theme.background?theme.background:theme.defaultBackground})`,backgroundSize:'cover', backgroundRepeat:'no-repeat'}}  >
       <Routes>
         <Route path={'/'} element={<Main visibilityControl={visibilityControl}  setVisibilityControl={setVisibilityControl} />}/>
         <Route path={'/apps'} element={<Apps/>}/>

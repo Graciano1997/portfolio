@@ -56,7 +56,7 @@ export const MusicApp = ({style,setVisibilityControl,visibilityControl})=>{
                                 setPlaying(false);
                                 console.log(audioRef.current)
                             }                            
-                        }} style={{background:'transparent'}}><PauseCircleIcon className="text-[#F1F5F9] w-20 h-20 md:w-35 md:h-35  cursor-pointer"/></button>
+                        }} style={{background:'transparent'}}><PauseCircleIcon className="musicPlayPause text-[#F1F5F9] w-20 h-20 md:w-35 md:h-35  cursor-pointer"/></button>
                     )}
 
 
@@ -69,7 +69,7 @@ export const MusicApp = ({style,setVisibilityControl,visibilityControl})=>{
                             }
                             
                         }}
-                        style={{background:'transparent'}}><PlayCircleIcon className="text-[#F1F5F9] w-20 h-20 md:w-35 md:h-35  cursor-pointer"/></button>
+                        style={{background:'transparent'}}><PlayCircleIcon className="musicPlayPause text-[#F1F5F9] w-20 h-20 md:w-35 md:h-35  cursor-pointer"/></button>
                     )
                 }
 

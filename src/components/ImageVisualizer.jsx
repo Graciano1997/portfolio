@@ -29,8 +29,9 @@ export const ImageVisualizer = ({images, style={},dispatcher=()=>{}}) => {
                     <ArrowLeft 
                     className={`w-5 h-5 ${imageNumber===0 || imagesCount===1 ? 'text-red-200':'text-black'}`} />
                 </button></div>
-            <div className="h-[50vh] w-[60vw]  sm:w-[70vw] sm:h-[70vh] md:w-100 md:h-100 ">
-                <img src={images[imageNumber]} className="w-[100%] h-[100%] rounded-[20px] object-fit" alt="" />
+            <div className="">
+            {/* <div className="h-[50vh] w-[60vw]  sm:w-[70vw] sm:h-[70vh] md:w-100 md:h-100 "> */}
+                <img style={{objectFit:'contain'}} src={images[imageNumber]} className="w-[100%] h-[100%] rounded-[20px] object-fit" alt="" />
             </div>
             <div className="flex items-center justify-center">
                 <button

@@ -31,17 +31,9 @@ export const Menu = ()=>{
     },[]);
 
     return(
-        <>
-
-        {/* className={`${!isOpen?'w-[70px] h-[70px] md:w-[70px] md:h-[70px] sm:w-[50px] sm:h-[50px]':'w-[200px] sm:w-[50%] sm:h-[50px] h-[70px] md:h-[70px] '} 
+        <>        
+        <div ref={menuRef} className={`menu ${!isOpen?'w-[70px] h-[70px]':'w-[300px] sm:w-[50%] h-[60px]'} 
         bg-white fixed bottom-3 rounded-full 
-        flex justify-around items-center
-         cursor-pointer`}
-          */}
-
-        
-        <div ref={menuRef}  className={`${!isOpen?'w-[70px] h-[70px]':'w-[300px] sm:w-[50%] h-[60px]'} 
-        bg-white fixed bottom-1 rounded-full 
         flex justify-around items-center
          cursor-pointer
          

@@ -41,3 +41,42 @@
 .read-the-docs {
   color: #888;
 }
+
+.menu{
+  transition: all ease-in-out;
+  transition-duration: 1s;
+}
+
+.shortcut{
+   transition: all ease-in-out;
+  transition-duration:0.5s;
+}
+
+.shortcut:hover{
+  background: #33333381;
+  border-radius:8px;
+  padding: 2px;
+}
+
+.menu:hover
+{
+  box-shadow: 0px 0 0 8px #9693938f;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
+
+
+.musicPlayPause{
+  transition: all ease-in-out;
+  animation: appear normal 1s ease-in-out;
+
+}
+
