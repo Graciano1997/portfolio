@@ -7,6 +7,7 @@ export const Headline=()=>{
     w-[50%] h-50
     text-[15px]
     sm:text-[20px] md:text-[20px] lg:text-[30px] xl:text-[30px]
+    titleAnimation
     ">
         <h1 >Welcome</h1>
         <h2 className="text-xl">At</h2>

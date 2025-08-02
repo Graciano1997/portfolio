@@ -14,7 +14,6 @@ export const Setting=()=>{
     const musicMenuContainer=useRef(null);
             
     return(<>
-        
     <Time/>
     <button
             onClick={()=>{ 
@@ -27,7 +26,7 @@ export const Setting=()=>{
             <MenuIcon className="w-10 h-10 text-white"/>
         </button>
 
-    <div className="h-100 w-[98vw] fixed  flex justify-center md:grid md:grid-cols-[25fr_90fr]  top-30">
+    <div className="h-100 w-[98vw] fixed  flex justify-center md:grid md:grid-cols-[25fr_90fr] top-30 sm:top-3 md:top-25">
         <div className="mt-[4px] hidden md:block">
         <Title title={'Settings'}/>
         <div className="ml-3  text-white h-[250px] mt-7 sm:mt-7 flex flex-wrap justify-between sm:gap-5">
@@ -53,7 +52,7 @@ export const Setting=()=>{
     
     {mobileMusicMenuIsOpen && (
     <div ref={musicMenuContainer} onClick={(el)=>{ el.stopPropagation(); if(el.target.contains(musicMobileRef.current)) setMobileMusicMenuIsOpen(false);}} className='md:hidden fixed w-[100%] h-[100%] top-[0] left-[0]' style={{zIndex:2100}} >    
-    <div ref={musicMobileRef} className='w-[60%] h-[100%] bg-black/80 pt-2 flex flex-col  gap-3' style={{zIndex:2500}} >
+    <div ref={musicMobileRef} className='w-[60%] h-[100%] bg-black/80 pt-2 flex flex-col items-center  gap-3' style={{zIndex:2500}} >
         <div className="flex items-center justify-center text-white  gap-2  rounded p-2">
         <LanguagesIcon className="w-8 h-8" /> 
         <select className="cursor-pointer" id="idiom" style={{background:'transparent'}}>

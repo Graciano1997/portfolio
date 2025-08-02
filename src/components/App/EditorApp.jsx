@@ -98,7 +98,7 @@ export default function EditorApp({ style, setVisibilityControl, visibilityContr
                 link.click();
             }}
             style={{background:'transparent'}}
-            className="block  absolute text-red-500 
+            className="smooth block  absolute text-red-500 
             text-2xl bg-white p-1 rounded shadow  left-[5px]
            top-[5px] transition-all duration-200 hover:bg-green-100">
             <SaveIcon className="w-10 h-10 text-white"/>
@@ -114,6 +114,7 @@ export default function EditorApp({ style, setVisibilityControl, visibilityContr
               setFilename(element.target.value);
             }} defaultValue={filename} style={{background:'transparent'}}
             className='
+            smooth
             mb-2 flex
           block  absolute text-white 
           h-[25px] w-[40%] md:w-80

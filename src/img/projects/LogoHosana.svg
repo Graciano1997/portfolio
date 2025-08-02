@@ -1,0 +1,30 @@
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo verde claro circular -->
+  <circle cx="150" cy="150" r="130" fill="#e2f0cb" />
+  
+  <!-- Círculo interno branco para contraste -->
+  <circle cx="150" cy="150" r="110" fill="#ffffff" />
+  
+  <!-- Texto "Hosana" -->
+  <text x="150" y="130" font-family="Arial, sans-serif" font-size="40" font-weight="700" text-anchor="middle" fill="#2b6a4d">Hosanna</text>
+  
+  <!-- Texto "POS" -->
+  <text x="150" y="170" font-family="Arial, sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#2b6a4d">POS</text>
+  
+  <!-- Carrinho de compras estilizado -->
+  <g transform="translate(150, 210) scale(0.5)">
+    <!-- Cesta do carrinho -->
+    <path d="M-50,0 L50,0 L40,-40 L-40,-40 Z" fill="none" stroke="#2b6a4d" stroke-width="6" />
+    
+    <!-- Rodas do carrinho -->
+    <circle cx="-30" cy="10" r="10" fill="#2b6a4d" />
+    <circle cx="30" cy="10" r="10" fill="#2b6a4d" />
+    
+    <!-- Alça do carrinho -->
+    <path d="M-40,-40 C-50,-60 -60,-65 -70,-65" fill="none" stroke="#2b6a4d" stroke-width="6" stroke-linecap="round" />
+  </g>
+  
+  <!-- Borda verde escura do círculo principal -->
+  <circle cx="150" cy="150" r="130" fill="none" stroke="#2b6a4d" stroke-width="5" />
+</svg>
+ 

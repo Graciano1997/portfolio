@@ -60,7 +60,7 @@ export const MathApp = ({style,setVisibilityControl,visibilityControl})=>{
                         (!operationToPlay.IIgradEquation &&
                         !operationToPlay.IIEquationSys &&
                         !operationToPlay.IIIEquationSys) &&(
-                            <h2 className="text-white flex flex-wrap items-center justify-center gap-2 text-3xl">Welcome at Math Essentials<InfinityIcon className="w-8 h-8 text-white"/><LucideOmega className="w-8 h-8 text-white"/><PiIcon className="w-8 h-8 text-white"/><EqualIcon className="w-8 h-8 text-white"/><DivideIcon className="w-8 h-8 text-white"/></h2>
+                            <h2 className="smooth text-white flex flex-wrap items-center justify-center gap-2 text-3xl">Welcome at Math Essentials<InfinityIcon className="w-8 h-8 text-white"/><LucideOmega className="w-8 h-8 text-white"/><PiIcon className="w-8 h-8 text-white"/><EqualIcon className="w-8 h-8 text-white"/><DivideIcon className="w-8 h-8 text-white"/></h2>
                         )
 
                     }

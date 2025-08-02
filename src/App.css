@@ -79,3 +79,17 @@
   animation: appear normal 1s ease-in-out;
 }
 
+.imageSlide{
+transition: all ease-in-out;
+animation: appear normal 2s ease-in-out;
+}
+
+.titleAnimation{
+transition: all ease-in-out;
+animation: appear normal 2s ease-in-out;
+}
+
+.smooth{
+  transition: all ease-in-out;
+  animation: appear normal 2s ease-in-out;
+}

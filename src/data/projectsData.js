@@ -12,11 +12,13 @@ import motoApi from '../img/projects/motoapi.png';
 import motologin from '../img/projects/motologin.png';
 import motomobile from '../img/projects/motomobile.png';
 import motodesktop from '../img/projects/motorcycle.svg';
+import { LucideAArrowDown } from 'lucide-react';
 
 
 const projects = [
   {
     id: 1,
+    icon:`${3}`,
     image: [motoFront,motoApi,motologin,motomobile,motodesktop],
     title: 'Motorcycle Booking FullStack',
     techLanguage: ['React.js', 'Redux', ' RoR', 'Rspec', 'PL/pgSQL'],
@@ -33,6 +35,7 @@ It utilizes PostgreSQL as the database and is designed to be a robust and secure
   },
   {
     id: 2,
+    icon:'A',
     image: [budgetApp],
     title: 'Budget App',
     techLanguage: [' RoR', 'Rspec', 'PL/pgSQL'],
@@ -43,6 +46,7 @@ It utilizes PostgreSQL as the database and is designed to be a robust and secure
   },
   {
     id: 3,
+    icon:'A',
     image: [covidApp],
     title: 'Pandemic Situation',
     techLanguage: ['React.js', 'JEST', 'Redux'],
@@ -52,6 +56,7 @@ It utilizes PostgreSQL as the database and is designed to be a robust and secure
   },
   {
     id: 4,
+    icon:'A',
     image: [restApp],
     title: 'Resting Countries',
     techLanguage: ['React.js', 'Redux'],
@@ -60,6 +65,7 @@ It utilizes PostgreSQL as the database and is designed to be a robust and secure
   },
   {
     id: 5,
+    icon:'A',
     image: [spaceApp],
     title: 'Space Travelers Hub',
     techLanguage: ['React.js', 'Redux', 'JEST'],
@@ -68,6 +74,7 @@ It utilizes PostgreSQL as the database and is designed to be a robust and secure
   },
   {
     id: 6,
+    icon:'A',
     image: [book],
     title: 'BookStore App',
     techLanguage: ['React.js', 'JEST', 'Redux'],
@@ -76,6 +83,7 @@ It utilizes PostgreSQL as the database and is designed to be a robust and secure
   },
   {
     id: 7,
+    icon:'A',
     image: [mathApp],
     title: 'Math Magicians',
     techLanguage: ['React.js', 'JEST'],
@@ -86,6 +94,7 @@ It utilizes PostgreSQL as the database and is designed to be a robust and secure
   },
   {
     id: 8,
+    icon:'A',
     image: [movieApp],
     title: 'JS Capstone-Go!Moovies',
     techLanguage: ['JS', 'JEST', 'HTML', 'Webpack'],
@@ -95,6 +104,7 @@ It utilizes PostgreSQL as the database and is designed to be a robust and secure
   },
   {
     id: 9,
+    icon:'A',
     image: [naruto],
     title: 'Naruto LeadBoard',
     techLanguage: ['CSS', 'HTML', 'Webpack'],
@@ -103,6 +113,7 @@ It utilizes PostgreSQL as the database and is designed to be a robust and secure
   },
   {
     id: 10,
+    icon:'A',
     image: [summitApp],
     title: 'Creative Summit 2015',
     techLanguage: ['JS', 'sass', 'HTML'],

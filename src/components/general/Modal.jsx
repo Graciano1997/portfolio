@@ -2,7 +2,7 @@
 // import { closeModal, openModal } from "../../slices/appSlice";
 // import { useEffect } from "react";
 
-const Modal = ({children })=>{
+const Modal = ({children,closeHandler=()=>{} })=>{
   // const dispatch = useDispatch();
   
   // useEffect(()=>{
@@ -20,10 +20,7 @@ const Modal = ({children })=>{
         flex justify-center' style={{zIndex:2000}} >
          <button
          onClick={()=>{ 
-          // dispatch(closeModal());
-          // if(helper !=undefined){
-          //   dispatch(helper());
-          // }
+          closeHandler();
         }}
           className="absolute text-red-500 
           text-2xl bg-white p-1 rounded shadow  right-[15px]

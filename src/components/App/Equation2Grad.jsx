@@ -51,10 +51,10 @@ export const Equation2Grad=()=>{
                 <h3 className="text-white text-start">
                 1º Step
                 </h3>
-                <div className="flex text-white mt-5 sm:w-100">
+                <div className="flex w-100 text-white mt-5 sm:w-100">
                 <TriangleIcon className="text-white w-5 h-5"/>= b<sup>2</sup> - 4.a.c
                 </div>
-                <div className="flex sm:w-100 text-white mt-5">
+                <div className="flex w-100 sm:w-100 text-white mt-5">
                 <TriangleIcon className="text-white w-5 h-5"/>= ({mathState.constants.b})<sup>2</sup> - 4.{`${mathState.constants.a}.${mathState.constants.c}`}
                 </div>
                 <div className="flex text-white mt-5">
@@ -68,10 +68,10 @@ export const Equation2Grad=()=>{
                 <h3 className="text-white text-start">
                 2º Step
                 </h3>
-                <div className="flex text-white mt-5">
+                <div className="flex w-100 text-white mt-5">
                 X1= {'('} - b  + <div className="flex items-center"><div className="flex  ">V<TriangleIcon  className="text-white w-3 h-3 mt-[6px] "/></div></div>{' ) /'} {'2a'}
                 </div>
-                <div className="flex text-white mt-5">
+                <div className="flex w-100 text-white mt-5">
                 X1= {'('} - {mathState.constants.b}  + <div className="flex items-center"><div className="flex  ">V{mathState.result.delta}</div></div>{' ) /'} {`2.${mathState.constants.a}`}
                 </div>
                 <div className="flex text-red-400 mt-5">
@@ -82,13 +82,13 @@ export const Equation2Grad=()=>{
                 <h3 className="text-white text-start">
                 3º Step
                 </h3>
-                <div className="flex text-white mt-5">
+                <div className="flex w-100 text-white mt-5">
                 X2= {'('} - b  + <div className="flex items-center"><div className="flex  ">V<TriangleIcon  className="text-white w-3 h-3 mt-[6px] "/></div></div>{' ) /'} {'2a'}
                 </div>
-                <div className="flex text-white mt-5">
+                <div className="flex w-100 text-white mt-5">
                 X2= {'('} - {mathState.constants.b}  - <div className="flex items-center"><div className="flex  ">V{mathState.result.delta}</div></div>{' ) /'} {`2.${mathState.constants.a}`}
                 </div>
-                <div className="flex text-red-400 mt-5">
+                <div className="flex w-100 text-red-400 mt-5">
                 X2= {mathState.result.x2}
                 </div>
                 </div>
