@@ -13,6 +13,9 @@ import { WeatherApp } from './components/App/WeatherApp'
 import { useDispatch } from 'react-redux'
 import { setTime } from './components/Slices/appSlice'
 import { MathApp } from './components/App/MathApp'
+import { wallpaper } from './data/wallpaper'
+import imgdefault from './img/wallpaper/blob.png'
+
 
 function App() {
   const [visibilityControl,setVisibilityControl]=useState({music:false,editor:false,weather:false,mathApp:false});
@@ -22,9 +25,11 @@ function App() {
         dispatch(setTime());
       },1000);
 
+      console.log(wallpaper[0]);
+
   return (
  <>
-      <main className='w-full h-full flex justify-center'>
+      <main className={`w-full h-full flex justify-center`}>
       <Routes>
         <Route path={'/'} element={<Main visibilityControl={visibilityControl}  setVisibilityControl={setVisibilityControl} />}/>
         <Route path={'/apps'} element={<Apps/>}/>

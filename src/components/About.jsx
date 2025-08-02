@@ -9,9 +9,9 @@ export const About=()=>{
     <Time/>
     <div className="h-100 w-100 sm:w-[100%]  fixed left-3 top-30">
         <Title title={'About Me'}/>
-        <div className="h-[250px] w-[100%] mt-10 sm:mt-0 md:mt-10   sm:gap-5  sm:grid sm:grid-cols-[80fr_20fr] p-4">
+        <div className="h-[250px] w-[100%] mt-10 sm:mt-0 md:mt-10 bg-black/30 rounded-[16px]  sm:gap-5  sm:grid sm:grid-cols-[80fr_20fr] p-1">
            
-            <div className="text-start w-[80%] text-white sm:mt-2 md:mt-1  h-50 flex flex-col justify-center p-1">
+            <div className="text-start w-[90%] text-white sm:mt-2 md:mt-1  h-50 flex flex-col justify-center p-1">
                 <h2 className="text-xl">Fullstack Developer | React, Rails, NodeJs & Python | Open to Remote Work Worldwide.</h2>
                 
                 <p className="mt-3">I'm a full-stack web developer who loves building clean, user-friendly applications. With a sharp eye for detail and a problem-solving mindset,

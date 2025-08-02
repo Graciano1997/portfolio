@@ -2,20 +2,17 @@ import { LanguagesIcon, Paintbrush, PaintBucket, SunMoonIcon, WallpaperIcon } fr
 import { DocItem } from "./general/DocItem";
 import { Time } from "./general/Time";
 import { Title } from "./general/Title";
+import { ImageVisualizer } from "./ImageVisualizer";
+import { wallpaper } from "../data/wallpaper";
 
 export const Setting=()=>{
     return(<>
     <Time/>
-    <div className="h-100 w-100 sm:w-[50%] fixed left-3 top-30">
+    <div className="h-100 w-[98vw] fixed left-3 grid grid-cols-[25fr_90fr] flex justify-between top-27">
+        <div className="mt-[4px]">
         <Title title={'Settings'}/>
-        <div className="ml-3  text-white h-[250px] mt-10 sm:mt-10 flex flex-wrap sm:gap-5">
+        <div className="ml-3  text-white h-[250px] mt-7 sm:mt-7 flex flex-wrap justify-between sm:gap-5">
             <ul className="flex flex-col gap-7">
-                <li className="flex items-center gap-2"><SunMoonIcon className="text-white w-8 h-8" /> 
-                <select className=" w-[100px]">
-                    <option value="">Light</option>
-                    <option value="">Dark</option>
-                    </select>
-                </li>
                 <li className="flex items-center gap-2"><LanguagesIcon className="text-white w-8 h-8" /> 
                 <select className=" w-[100px]">
                     <option value="">Portugues</option>
@@ -27,6 +24,12 @@ export const Setting=()=>{
                 </li>
             </ul>
         </div>
+        </div>
+            <div className=" h-100 flex justify-center">
+                <div className="w-100">
+                <ImageVisualizer style={{background:'white', padding:'15px'}} images={wallpaper} />
+                </div>
+            </div>
     </div>
     </>);
 };

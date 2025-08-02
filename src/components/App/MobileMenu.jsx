@@ -13,14 +13,14 @@ export const MobileMunu = ({setOperationPlay=()=>{}, icon,menuType, musics=[],se
         
         {menuType.music &&
         musics.length>0 && (
-            <div ref={musicMobileRef} className='w-[70%] h-[100%] bg-black pt-2 flex flex-col items-center gap-3 overflow-y-scroll' style={{zIndex:2500}} >
+            <div ref={musicMobileRef} className='w-[50%] h-[100%] bg-black/70 pt-2 flex flex-col items-center gap-3 overflow-y-scroll' style={{zIndex:2500}} >
            {musics.map((item)=><MusicItem item={item} musicToPlay={musicToPlay} setPlaying={setPlaying} setMusicToPlay={setMusicToPlay} />)}
            <AppFooter icon={icon} style={'absolute bottom-5 text-white'}/></div>
            )
         }
         
         {menuType.math &&
-            <div ref={musicMobileRef} className='w-[70%] h-[100%] bg-black pt-2 flex flex-col items-center gap-3 overflow-y-scroll' style={{zIndex:2500}} >
+            <div ref={musicMobileRef} className='w-[50%] h-[100%] bg-black/70 pt-2 flex flex-col items-center gap-3 overflow-y-scroll' style={{zIndex:2500}} >
             <MathItem operationToPlay={{IIgradEquation:true,IIEquationSys:false,IIIEquationSys:false}} item={{title:'II Grad Equation'}} setOperationPlay={setOperationPlay}  />
             <MathItem operationToPlay={{IIgradEquation:false,IIEquationSys:true,IIIEquationSys:false}} item={{title:'II Equation System'}} setOperationPlay={setOperationPlay}  />
             <MathItem operationToPlay={{IIgradEquation:false,IIEquationSys:false,IIIEquationSys:true}} item={{title:'III Equation System'}} setOperationPlay={setOperationPlay} />
