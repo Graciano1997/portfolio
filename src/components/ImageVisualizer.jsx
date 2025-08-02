@@ -32,8 +32,7 @@ export const ImageVisualizer = ({images, style={},dispatcher=null}) => {
                     className={`w-5 h-5 ${imageNumber===0 || imagesCount===1 ? 'text-red-200':'text-black'}`} />
                 </button></div>
             <div className="flex mt-10 justify-center items-center sm:w-80 sm:h-80 md:w-80 md:h-80 md:flex md:items-center">
-            {/* <div className="h-[50vh] w-[60vw]  sm:w-[70vw] sm:h-[70vh] md:w-100 md:h-100 ">aspect-[16/9] */}
-              {visible &&<img style={{objectFit:'contain'}} src={images[imageNumber]} className="imageSlide w-[100%] h-[100%] rounded-[50px]" alt="" /> }  
+              {visible &&<img style={{objectFit:'contain'}} src={images[imageNumber]} className="imageSlide w-[100%] h-[100%] rounded-[20px] sm:rounded-[50px]" alt="" /> }  
             </div>
             <div className="flex items-center justify-center">
                 <button

@@ -23,9 +23,9 @@ export const ProjectItem = ({ project,closeHandler }) => {
           </div>
 
           <div className="mt-2 flex gap-2 mt-4 md:pb-2">
-            <a href={project.link[0]} className="text-light flex gap-2 items-center p-2 bg-blue-200 rounded-[16px]"><RocketIcon className="w-5 h-5" />Live</a>
-            <a href={project.link[1]} className="text-light flex gap-2 items-center p-2 bg-blue-200 rounded-[16px]"><GithubIcon className="w-5 h-5" />{project.link.length===3?'FrontEnd':'Visit'}</a>
-           {project.link.length===3 && (<a href={project.link[2]} className="text-light flex gap-2 items-center p-2 bg-blue-200 rounded-[16px]"><GithubIcon className="w-5 h-5" />BackEnd</a>)} 
+            <a href={project.link[0]} target="_blank"  className="text-light flex gap-2 items-center p-2 bg-blue-200 rounded-[16px]"><RocketIcon className="w-5 h-5" />Live</a>
+            <a href={project.link[1]} target="_blank" className="text-light flex gap-2 items-center p-2 bg-blue-200 rounded-[16px]"><GithubIcon className="w-5 h-5" />{project.link.length===3?'FrontEnd':'Visit'}</a>
+           {project.link.length===3 && (<a href={project.link[2]} target="_blank" className="text-light flex gap-2 items-center p-2 bg-blue-200 rounded-[16px]"><GithubIcon className="w-5 h-5" />BackEnd</a>)} 
           </div>
         </div>
         <ImageVisualizer images={project.image} />

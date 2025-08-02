@@ -3,6 +3,7 @@ import gra from "../assets/gra.jpeg";
 import { DocItem } from "./general/DocItem";
 import { Time } from "./general/Time";
 import { Title } from "./general/Title";
+import { Links } from "./general/Links";
 
 export const About=()=>{
     return(<>
@@ -17,11 +18,7 @@ export const About=()=>{
                 <p className="mt-3">I'm a full-stack web developer who loves building clean, user-friendly applications. With a sharp eye for detail and a problem-solving mindset,
                 I aim to create fast, engaging web experiences. Let’s work together to bring your ideas to life!</p>
                 
-                <div className="flex sm:hidden fixed bottom-26 right-1 mt-1  justify-center gap-3 cursor-pointer">
-                    <LinkedinIcon className="text-white w-8 h-8" />
-                    <GithubIcon className="text-white w-8 h-8" />
-                    <MailIcon className="text-white w-8 h-8" />
-                </div>
+                <Links style={'sm:hidden fixed bottom-26 right-1 mt-1'}/>
                 
                 <div className="mt-4 sm:hiddn md:w-[100%] hidden md:flex items-center ">
                     <Layers3Icon className="text-white w-10 h-10" /> <ArrowRight className="text-white w-10 h-10"/>         
@@ -44,13 +41,8 @@ export const About=()=>{
             <div className="flex h-50 w-50 sm:h-25 sm:w-25 md:h-25 md:w-25 xl:w-45 xl:h-45 ">
                 <img className="w-[100%] h-[100%] rounded-full" src={gra} alt="Graciano Henrique" />
             </div>
-            <div className="flex mt-2  justify-center gap-3 cursor-pointer">
-                    <LinkedinIcon className="text-white w-8 h-8" />
-                    <GithubIcon className="text-white w-8 h-8" />
-                    <MailIcon className="text-white w-8 h-8" />
-
-                </div>
-            </div>
+            <Links style={'mt-2'}/>
+        </div>
         </div>
     </div>
     </>);

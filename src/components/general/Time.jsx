@@ -1,4 +1,4 @@
-import { LucideCloudSun, LucideMoon } from "lucide-react"
+import { LucideCloud, LucideCloudSun, LucideMoon } from "lucide-react"
 import { useSelector } from "react-redux"
 
 export const Time = () => {
@@ -10,7 +10,7 @@ export const Time = () => {
             <h1>{`${time.hour >=10? time.hour :`0${time.hour}` }:${time.minutes >=10? time.minutes :`0${time.minutes}` }`}</h1>
             <h4>ANGOLA/LUANDA</h4>
             </div>
-            {(time.hour >=6 && time.hour<18) ? <LucideCloudSun className="h-10 w-10"/> :<LucideMoon className="h-10 w-10" />}
+            {time.hour==5?<LucideCloud className="h-10 w-10"/> : (time.hour >=6 && time.hour<18 ? <LucideCloudSun className="h-10 w-10"/> :<LucideMoon className="h-10 w-10" />)}
         </div>
     )
 }

@@ -13,6 +13,14 @@ import motologin from '../img/projects/motologin.png';
 import motomobile from '../img/projects/motomobile.png';
 import motodesktop from '../img/projects/motorcycle.svg';
 import hosanaPos from '../img/projects/LogoHosana.svg';
+
+import hosannaLogin from '../img/HosannaPoint/Login.jpg';
+import hosannaDesktop from '../img/HosannaPoint/desktop.jpg';
+import hosannaSale from '../img/HosannaPoint/sale.jpg';
+import hosannaSales from '../img/HosannaPoint/Sales.jpg';
+import hosannaSpents from '../img/HosannaPoint/Spents.jpg';
+
+
 import { BikeIcon, BiohazardIcon, BookAIcon, CalculatorIcon, Film, FilmIcon, LucideAArrowUp, LucideAirplay, RocketIcon } from 'lucide-react';
 
 export const Projects = () => {
@@ -23,7 +31,7 @@ export const Projects = () => {
     {
       id: 1,
       icon: <img src={hosanaPos} />,
-      image: [motoFront, motoApi, motologin, motomobile, motodesktop],
+      image: [hosannaLogin,hosannaDesktop,hosannaSale,hosannaSales, hosannaSpents],
       title: 'Hosanna Sale Point',
       techLanguage: ['React.js', 'Redux','Tailwind', ' RoR API', 'pgSQL'],
       content: [`Hosanna Sale Point is a modern, efficient Sales Point (POS) system designed to manage product sales, transactions, and inventory with ease. This repository contains the **API backend**, built with **Ruby on Rails** and powered by **PostgreSQL** for robust data management.`, 

@@ -20,8 +20,15 @@ export const Search = ({projects=[], dispatcher=null, searchingPlaceholder="Sear
         `}>
            <input type="text"
            ref={inputRef}
+           onKeyDown={(element)=>{
+            if(element.key=="Enter"){
+                dispatch(setQuery(element.target.value));
+                dispatch(setSearching(true));
+                if(dispatcher){dispatcher(projects.filter((project)=>project.title.includes(appState.query)))}
+            }
+             }}
            onChange={(element)=>{
-            if(element.target.value==''){
+             if(element.target.value==''){
                 dispatch(setSearching(false));
                 dispatch(setQuery(''));
                 if(dispatcher){dispatcher(Projects())}
