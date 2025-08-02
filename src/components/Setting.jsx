@@ -4,11 +4,8 @@ import { Title } from "./general/Title";
 import { ImageVisualizer } from "./ImageVisualizer";
 import { wallpaper } from "../data/wallpaper";
 import { setBackground } from "./Slices/themeSlice";
-import { useSelector } from "react-redux";
 
 export const Setting=()=>{
-    const theme = useSelector((state)=>state.themeState);
-    
     return(<>
     <Time/>
     <div className="h-100 w-[98vw] fixed left-3 grid grid-cols-[25fr_90fr] flex justify-between top-27">
@@ -30,7 +27,7 @@ export const Setting=()=>{
         </div>
             <div className=" h-100 flex justify-center">
                 <div className="w-100">
-                <ImageVisualizer dispatcher={setBackground} style={{background:'white', padding:'15px'}} images={wallpaper} />
+                <ImageVisualizer dispatcher={setBackground} style={{background:'white', padding:'15px'}} images={wallpaper } />
                 </div>
             </div>
     </div>

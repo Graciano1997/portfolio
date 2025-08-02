@@ -6,27 +6,27 @@ export const Shortcut=({visibilityControl,setVisibilityControl})=>{
 
     return(
     <div className="text-start text-white flex 
-    absolute  right-5 bottom-30 sm:bottom-15 md:bottom-40 w-70 h-[70px] gap-10
+    absolute  right-5 bottom-30 sm:bottom-15 md:bottom-40 w-70 h-[70px] gap-10 
     ">
     <SquarePenIcon 
     onClick={()=>{
         setVisibilityControl({...visibilityControl,editor:true});
     }}
-    className="color-red-200 h-10 w-10 cursor-pointer"/>
+    className="h-10 w-10 cursor-pointer hover:bg-black/70 hover:p-1 hover:rounded"/>
     <CloudSunIcon 
       onClick={()=>{
         setVisibilityControl({...visibilityControl,weather:true});
     }}
 
-    className="color-red-200 h-10 w-10 cursor-pointer"/>
+    className="color-red-200 h-10 w-10 cursor-pointer hover:bg-black/70 hover:p-1 hover:rounded"/>
     <Music onClick={()=>{
         setVisibilityControl({...visibilityControl,music:true});
-    }}  className="color-red-200 h-10 w-10 cursor-pointer" />
+    }}  className="color-red-200 h-10 w-10 cursor-pointer hover:bg-black/70 hover:p-1 hover:rounded" />
     <PiIcon
     onClick={()=>{
         setVisibilityControl({...visibilityControl,mathApp:true});
     }}
-    className="color-red-200 h-10 w-10 cursor-pointer"/>
+    className="color-red-200 h-10 w-10 cursor-pointer hover:bg-black/70 hover:p-1 hover:rounded"/>
     {/* <Calendar className="color-red-200 h-10 w-10 cursor-pointer"/> */}
 
     </div>

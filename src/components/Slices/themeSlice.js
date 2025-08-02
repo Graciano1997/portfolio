@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { wallpaper } from "../../data/wallpaper";
 
+const userWallpaper=localStorage.getItem("graportfoliowall");
+
 const initialState = {
     defaultBackground:wallpaper[0],
-    background:null,
+    background:userWallpaper?userWallpaper:null
 }
 
 const themeSlice = createSlice({
@@ -16,6 +18,7 @@ const themeSlice = createSlice({
         },
         setBackground: (state,action) => {
             state.background = action.payload;
+            localStorage.setItem("graportfoliowall",action.payload);
          }
     }
 });
