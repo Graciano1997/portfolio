@@ -36,9 +36,8 @@ export const Equation2Grad=()=>{
                 <input name="c" type="number" value={mathState.constants.c} onChange={constsHandler} className="p-1 sm:p-2 rounded bg-white text-black w-[100%]" placeholder="c"  />
             </div>
             <div className="flex gap-2 justify-center">
-
-            {
-               typeof mathState.constants.a && mathState.constants.c!=null && mathState.constants.b!=null &&(
+                {
+               mathState.constants.a && mathState.constants.c!=null && mathState.constants.b!=null &&(
                     <button style={{alignSelf:'center'}} onClick={calcHandler} className="p-1 mt-2">Calculate</button>
                 )
             }

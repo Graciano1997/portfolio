@@ -11,7 +11,7 @@ export const Equation2Sys=()=>{
 
     const constsHandler=(element)=>{
         if(element.target.value==''){
-            dispach(setSys2Constants({...mathState.sys2Constants,[element.target.name]:''}))
+            dispach(setSys2Constants({...mathState.sys2Constants,[element.target.name]:null}))
         }else{
             dispach(setSys2Constants({...mathState.sys2Constants,[element.target.name]:element.target.value*1}));
           }
@@ -50,9 +50,9 @@ export const Equation2Sys=()=>{
             <div className="flex gap-2 justify-center">
 
             {
-                mathState.sys2Constants.a1 && mathState.sys2Constants.a2
-                && mathState.sys2Constants.b1 && mathState.sys2Constants.b2 
-                && mathState.sys2Constants.c1 && mathState.sys2Constants.c2 
+                mathState.sys2Constants.a1!=null && mathState.sys2Constants.a2!=null
+                && mathState.sys2Constants.b1!=null && mathState.sys2Constants.b2!=null 
+                && mathState.sys2Constants.c1!=null && mathState.sys2Constants.c2!=null 
                 &&
                 (
                     <button style={{alignSelf:'center'}} onClick={calcHandler} className="p-1 mt-2">Calculate</button>
@@ -89,7 +89,7 @@ export const Equation2Sys=()=>{
                 <div className="flex flex-col text-white mt-5 gap-2 items-start ">
                 <p className="text-white text-xl">Dx = {mathState.sys2Result.dx}</p> 
                 <p className="text-white text-xl flex items-center">x = Dx / <TriangleIcon className="text-white w-5 h-5"/> </p> 
-                <p className="text-red-400 text-xl">x = {mathState.sys2Result.x} </p> 
+                <p className="text-red-400 text-xl">x = {(mathState.sys2Result.d===0 && mathState.sys2Result.dx===0)?'Impossible to Determine':mathState.sys2Result.x} </p> 
                 </div>
                 </div>
                 <div className="">
@@ -102,7 +102,7 @@ export const Equation2Sys=()=>{
                 <div className="flex flex-col text-white mt-5 gap-2 items-start ">
                 <p className="text-white text-xl">Dy = {mathState.sys2Result.dy}</p> 
                 <p className="text-white text-xl flex items-center">y = Dy / <TriangleIcon className="text-white w-5 h-5"/> </p> 
-                <p className="text-red-400 text-xl">y = {mathState.sys2Result.y} </p> 
+                <p className="text-red-400 text-xl">y = {(mathState.sys2Result.d===0 && mathState.sys2Result.dy===0)?'Impossible to Determine':mathState.sys2Result.y} </p> 
                 </div>
                 </div>
                 </>

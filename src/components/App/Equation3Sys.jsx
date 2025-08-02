@@ -153,7 +153,7 @@ export const Equation3Sys=()=>{
                 <div className="flex flex-col text-white mt-5 gap-2 items-start ">
                 <p className="text-white text-xl">Dx = {mathState.sys3Result.dx}</p> 
                 <p className="text-white text-xl flex items-center">x = Dx / <TriangleIcon className="text-white w-5 h-5"/> </p> 
-                <p className="text-red-400 text-xl">x = {mathState.sys3Result.x} </p> 
+                <p className="text-red-400 text-xl">x = {(mathState.sys3Result.d===0 && mathState.sys3Result.dx===0)?'Impossible to Determine':mathState.sys3Result.x} </p> 
                 </div>
                 </div>
 
@@ -168,7 +168,7 @@ export const Equation3Sys=()=>{
                 <div className="flex flex-col text-white mt-5 gap-2 items-start ">
                 <p className="text-white text-xl">Dy = {mathState.sys3Result.dy}</p> 
                 <p className="text-white text-xl flex items-center">y = Dy / <TriangleIcon className="text-white w-5 h-5"/> </p> 
-                <p className="text-red-400 text-xl">x = {mathState.sys3Result.y} </p> 
+                <p className="text-red-400 text-xl">y = {(mathState.sys3Result.d===0 && mathState.sys3Result.dy===0)?'Impossible to Determine':mathState.sys3Result.y} </p> 
                 </div>
                 </div>
 
@@ -183,7 +183,7 @@ export const Equation3Sys=()=>{
                 <div className="flex flex-col text-white mt-5 gap-2 items-start ">
                 <p className="text-white text-xl">Dz = {mathState.sys3Result.dz}</p> 
                 <p className="text-white text-xl flex items-center">z = Dz / <TriangleIcon className="text-white w-5 h-5"/> </p> 
-                <p className="text-red-400 text-xl">x = {mathState.sys3Result.z} </p> 
+                <p className="text-red-400 text-xl">z = {(mathState.sys3Result.d===0 && mathState.sys3Result.dz===0)?'Impossible to Determine':mathState.sys3Result.z} </p> 
                 </div>
                 </div>
 
