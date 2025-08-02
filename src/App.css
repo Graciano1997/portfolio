@@ -42,7 +42,8 @@
   color: #888;
 }
 
-.menu{
+.menu,
+.docItem{
   transition: all ease-in-out;
   transition-duration: 1s;
 }
@@ -58,7 +59,8 @@
   padding: 2px;
 }
 
-.menu:hover
+.menu:hover,
+.docItem:hover
 {
   box-shadow: 0px 0 0 8px #9693938f;
 }
@@ -72,11 +74,8 @@
   }
 }
 
-
-
 .musicPlayPause{
   transition: all ease-in-out;
   animation: appear normal 1s ease-in-out;
-
 }
 

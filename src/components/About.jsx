@@ -11,7 +11,7 @@ export const About=()=>{
         <Title title={'About Me'}/>
         <div className="h-[250px] w-[100%] mt-10 sm:mt-0 md:mt-10 bg-black/30 rounded-[16px]  sm:gap-5  sm:grid sm:grid-cols-[80fr_20fr] p-1">
            
-            <div className="text-start w-[90%] text-white sm:mt-2 md:mt-1  h-50 flex flex-col justify-center p-1">
+            <div className="text-start w-[90%] text-white sm:mt-2 md:mt-1  flex flex-col justify-center p-1">
                 <h2 className="text-xl">Fullstack Developer | React, Rails, NodeJs & Python | Open to Remote Work Worldwide.</h2>
                 
                 <p className="mt-3">I'm a full-stack web developer who loves building clean, user-friendly applications. With a sharp eye for detail and a problem-solving mindset,
@@ -27,13 +27,15 @@ export const About=()=>{
                     <Layers3Icon className="text-white w-10 h-10" /> <ArrowRight className="text-white w-10 h-10"/>         
                 <ul className="flex gap-2 flex-wrap">
                     <li>Ruby on Rails</li>
-                    <li>React</li>
-                    <li>Redux</li>
                     <li>NodeJS</li>
                     <li>Python</li>
+                    <li>PHP</li>
+                    <li>React</li>
+                    <li>Redux</li>
+                    <li>Tailwind</li>
+                    <li>Docker</li>
                     <li>Mysql</li>
                     <li>PostgreeSql</li>
-                    <li>PHP</li>
                 </ul>
         </div>
             </div>
