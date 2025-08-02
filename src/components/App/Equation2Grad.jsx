@@ -38,7 +38,7 @@ export const Equation2Grad=()=>{
             <div className="flex gap-2 justify-center">
 
             {
-                mathState.constants.a && mathState.constants.c!=null && mathState.constants.b!=null &&(
+               typeof mathState.constants.a && mathState.constants.c!=null && mathState.constants.b!=null &&(
                     <button style={{alignSelf:'center'}} onClick={calcHandler} className="p-1 mt-2">Calculate</button>
                 )
             }

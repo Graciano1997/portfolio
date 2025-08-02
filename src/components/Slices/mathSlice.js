@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const initialState={
-        constants:{a:'',b:'',c:''},
+        constants:{a:null,b:null,c:null},
         result:{delta:null,x1:null,x2:null},
         sys2Constants:{ a1:'',a2:'',b2:'',b1:'',c1:'',c2:''},
         sys2Result:{d:null,dx:null,dy:null,x:null,y:null}

@@ -4,6 +4,7 @@ import { setResult, setSys2Constants, setSys2Result } from "../Slices/mathSlice"
 import { Matriz } from "./Matriz";
 import { MatrizX } from "./MatrizX";
 import { MatrizY } from "./MatrizY";
+import { MatrizZ } from "./MatrizZ";
 
 export const Equation3Sys=()=>{
     const mathState=useSelector((state)=>state.mathState);
@@ -24,11 +25,6 @@ export const Equation3Sys=()=>{
         const x= deltaX / deltaCalc;
         const y= deltaY / deltaCalc;
 
-        // console.log(deltaCalc);
-        //  console.log(deltaX);
-        // console.log(deltaY);
-        // console.log(x);
-        // console.log(y);
         dispach(setSys2Result({d:deltaCalc,dx:deltaX,dy:deltaY,x:x,y:y}));
     }
 
@@ -78,12 +74,14 @@ export const Equation3Sys=()=>{
 
             </div>
 
-                <div className="flex flex-wrap sm:grid sm:grid-cols-3  gap-5 mt-5 ">
+                <div className="flex flex-wrap sm:grid sm:grid-cols-1  gap-5 mt-5 ">
                 {
-                 mathState.sys2Result.d!=null
+                //  mathState.sys2Result.d!=null
+                 true
                 && 
                 <>
-                <div className="">
+            
+                <div className="w-[100%]">
                 <h3 className="text-white text-start">
                 1º Step
                 </h3>
@@ -95,33 +93,48 @@ export const Equation3Sys=()=>{
                   </div>
                 </div>
 
-                <div className="">
+
+                <div className="w-[100%]">
                 <h3 className="text-white text-start">
                 2º Step
                 </h3>
                 <MatrizX iconComponent={<p className="text-white text-xl">Dx</p>}/>
-                <MatrizX constants={mathState.sys2Constants} iconComponent={<p className="text-white text-xl">Dx</p>}/>
+                <MatrizX  iconComponent={<p className="text-white text-xl">Dx</p>}/>
+                {/* <MatrizX constants={mathState.sys2Constants} iconComponent={<TriangleIcon className="text-white w-5 h-5" />}/> */}
+
+                <div className="flex text-white mt-5 gap-2 items-center">
+                <TriangleIcon className="text-white w-5 h-5"/> = {mathState.sys2Result.d}
+                  </div>
+                </div>
 
 
-                <div className="flex flex-col text-white mt-5 gap-2 items-start ">
-                <p className="text-white text-xl">Dx = {mathState.sys2Result.dx}</p> 
-                <p className="text-white text-xl flex items-center">x = Dx / <TriangleIcon className="text-white w-5 h-5"/> </p> 
-                <p className="text-red-400 text-xl">x = {mathState.sys2Result.x} </p> 
-                </div>
-                </div>
-                <div className="">
+                <div className="w-[100%]">
                 <h3 className="text-white text-start">
                 3º Step
                 </h3>
                 <MatrizY iconComponent={<p className="text-white text-xl">Dy</p>}/>
-                <MatrizY constants={mathState.sys2Constants} iconComponent={<p className="text-white text-xl">Dy</p>}/>
+                <MatrizY  iconComponent={<p className="text-white text-xl">Dy</p>}/>
+                {/* <MatrizX constants={mathState.sys2Constants} iconComponent={<TriangleIcon className="text-white w-5 h-5" />}/> */}
 
-                <div className="flex flex-col text-white mt-5 gap-2 items-start ">
-                <p className="text-white text-xl">Dy = {mathState.sys2Result.dy}</p> 
-                <p className="text-white text-xl flex items-center">y = Dy / <TriangleIcon className="text-white w-5 h-5"/> </p> 
-                <p className="text-red-400 text-xl">y = {mathState.sys2Result.y} </p> 
+                <div className="flex text-white mt-5 gap-2 items-center">
+                <TriangleIcon className="text-white w-5 h-5"/> = {mathState.sys2Result.d}
+                  </div>
                 </div>
+
+
+                <div className="w-[100%]">
+                <h3 className="text-white text-start">
+                4º Step
+                </h3>
+                <MatrizZ iconComponent={<p className="text-white text-xl">Dz</p>}/>
+                <MatrizZ  iconComponent={<p className="text-white text-xl">Dz</p>}/>
+                {/* <MatrizX constants={mathState.sys2Constants} iconComponent={<TriangleIcon className="text-white w-5 h-5" />}/> */}
+
+                <div className="flex text-white mt-5 gap-2 items-center">
+                <TriangleIcon className="text-white w-5 h-5"/> = {mathState.sys2Result.d}
+                  </div>
                 </div>
+
                 </>
                 }
 
