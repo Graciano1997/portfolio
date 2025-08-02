@@ -7,7 +7,7 @@ import { ProjectItem } from "./ProjectItem";
 export const Apps=()=>{
     return(<>
     <Search searchingPlaceholder={'Search for an Application'} style={'absolute top-5 sm:top-5'}/>
-    <div className=" h-[70vh] md:h-90 sm:h-[70vh] sm:mt-3  md:h-[65vh] xl:h-[70vh] xl:mt-2 w-[100%] sm:w-[600px] md:w-[700px] lx:w-[900px]
+    <div className=" h-[70vh] md:h-90 sm:h-[70vh] mt-19  md:h-[65vh] xl:h-[70vh] xl:mt-25 w-[100%] sm:w-[600px] md:w-[700px] lx:w-[900px]
      flex flex-wrap overflow-y-auto justify-center">
         <AppItem icon={<MusicIcon className="w-10 h-10 bg-white"/>}/>
         <AppItem icon={<h1 className="text-xl">H</h1>}/>
