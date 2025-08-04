@@ -1,13 +1,4 @@
-// import { useDispatch } from "react-redux";
-// import { closeModal, openModal } from "../../slices/appSlice";
-// import { useEffect } from "react";
-
 const Modal = ({children,closeHandler=()=>{} })=>{
-  // const dispatch = useDispatch();
-  
-  // useEffect(()=>{
-  //   dispatch(openModal());
-  // },[]);
 
     return(
         <>
@@ -19,9 +10,10 @@ const Modal = ({children,closeHandler=()=>{} })=>{
         top-[0] left-[0] 
         flex justify-center' style={{zIndex:2000}} >
          <button
-         onClick={()=>{ 
+        onClick={()=>{ 
           closeHandler();
         }}
+        
           className="absolute text-red-500 
           text-2xl bg-white p-1 rounded shadow  right-[15px]
            top-[20px] transition-all duration-200 hover:bg-green-100">X</button>

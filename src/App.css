@@ -62,7 +62,7 @@
 .menu:hover,
 .docItem:hover
 {
-  box-shadow: 0px 0 0 8px #9693938f;
+  box-shadow: 0px 0 0 10px #9693938f;
 }
 
 @keyframes appear {
