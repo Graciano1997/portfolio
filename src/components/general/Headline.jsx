@@ -1,4 +1,9 @@
+import { useTranslation } from "react-i18next";
+import { firstCapitalize } from "../../lib/firstCapitalize";
+
 export const Headline=()=>{
+    const {t}= useTranslation();
+
     return(<div className="text-start text-white flex flex-col 
     absolute left-10 
     top-40
@@ -9,8 +14,8 @@ export const Headline=()=>{
     sm:text-[20px] md:text-[20px] lg:text-[30px] xl:text-[30px]
     titleAnimation
     ">
-        <h1 >Welcome</h1>
-        <h2 className="text-xl">At</h2>
-        <h2 className="text-xl">Graciano Henrique Portfolio</h2>
+        <h1 >{firstCapitalize(t('welcome'))}</h1>
+        <h2 className="text-xl">{firstCapitalize(t('at'))}</h2>
+        <h2 className="text-xl">{firstCapitalize(t('gracianoPortfolio'))}</h2>
     </div>);
 };

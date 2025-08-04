@@ -4,19 +4,21 @@ import { DocItem } from "./general/DocItem";
 import { Time } from "./general/Time";
 import { Title } from "./general/Title";
 import { Links } from "./general/Links";
+import { firstCapitalize } from "../lib/firstCapitalize";
+import { useTranslation } from "react-i18next";
 
 export const About=()=>{
+    const {t}=useTranslation();
     return(<>
     <Time/>
     <div className="h-100 w-100 sm:w-[100%]  fixed left-3 top-30">
-        <Title title={'About Me'}/>
+        <Title title={firstCapitalize(t('about'))}/>
         <div className="h-[250px] w-[100%] mt-10 sm:mt-0 md:mt-10 bg-black/30 rounded-[16px]  sm:gap-5  sm:grid sm:grid-cols-[80fr_20fr] p-1">
            
             <div className="text-start w-[90%] text-white sm:mt-2 md:mt-1  flex flex-col justify-center p-1">
-                <h2 className="text-xl">Fullstack Developer | React, Rails, NodeJs & Python | Open to Remote Work Worldwide.</h2>
+                <h2 className="text-xl font-bold">{firstCapitalize(t('aboutHeader'))}</h2>
                 
-                <p className="mt-3">I'm a full-stack web developer who loves building clean, user-friendly applications. With a sharp eye for detail and a problem-solving mindset,
-                I aim to create fast, engaging web experiences. Let’s work together to bring your ideas to life!</p>
+                <p className="mt-3">{firstCapitalize(t('aboutcontent'))}</p>
                 
                 <Links style={'sm:hidden fixed bottom-26 right-1 mt-1'}/>
                 

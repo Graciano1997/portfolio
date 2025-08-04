@@ -7,11 +7,15 @@ import { setBackground } from "./Slices/themeSlice";
 import { MobileMunu } from "./App/MobileMenu";
 import { useRef, useState } from "react";
 import { AppFooter } from "./general/AppFooter";
+import { useTranslation } from "react-i18next";
+import { LanguageSelector } from "./general/LanguageSelector";
+import { firstCapitalize } from "../lib/firstCapitalize";
 
 export const Setting=()=>{
     const [mobileMusicMenuIsOpen,setMobileMusicMenuIsOpen]=useState(false);
     const musicMobileRef=useRef(null);
     const musicMenuContainer=useRef(null);
+    const {i18n,t}=useTranslation();
             
     return(<>
     <Time/>
@@ -28,17 +32,14 @@ export const Setting=()=>{
 
     <div className="h-100 w-[98vw] fixed  flex justify-center md:grid md:grid-cols-[25fr_90fr] top-30 sm:top-3 md:top-25">
         <div className="mt-[4px] hidden md:block">
-        <Title title={'Settings'}/>
+        <Title title={firstCapitalize(t('settings'))}/>
         <div className="ml-3  text-white h-[250px] mt-7 sm:mt-7 flex flex-wrap justify-between sm:gap-5">
             <ul className="flex flex-col gap-7">
                 <li className="flex items-center gap-2"><LanguagesIcon className="text-white w-8 h-8" /> 
-                <select className="" style={{background:'transparent'}}>
-                    <option value="">Portugues</option>
-                    <option value="">Ingles</option>
-                    </select>
-                </li>
+                <LanguageSelector/>
+                 </li>
                 <li className="flex items-center rounded gap-2"><WallpaperIcon className="text-white w-8 h-8" /> 
-                WallPaper
+                {firstCapitalize(t('wallPaper'))}
                 </li>
             </ul>
         </div>
@@ -55,10 +56,7 @@ export const Setting=()=>{
     <div ref={musicMobileRef} className='w-[60%] h-[100%] bg-black/80 pt-2 flex flex-col items-center  gap-3' style={{zIndex:2500}} >
         <div className="flex items-center justify-center text-white  gap-2  rounded p-2">
         <LanguagesIcon className="w-8 h-8" /> 
-        <select className="cursor-pointer" id="idiom" style={{background:'transparent'}}>
-        <option value="">Portugues</option>
-        <option value="">Ingles</option>
-        </select>
+        <LanguageSelector/>
         </div>
         <AppFooter icon={<Code2Icon className="w-8 h-8"/>} style={'absolute bottom-5 text-white text-center'}/>
 </div>
