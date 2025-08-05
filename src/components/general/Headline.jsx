@@ -9,12 +9,12 @@ export const Headline=()=>{
     top-40
     sm:top-20 
     md:top-40 
-    w-[50%] h-50
+    w-[100%] h-50
     text-[15px]
     sm:text-[20px] md:text-[20px] lg:text-[30px] xl:text-[30px]
     titleAnimation
     ">
-        <h1 >{firstCapitalize(t('welcome'))}</h1>
+        <h1 className="text-[20px]">{firstCapitalize(t('welcome'))}</h1>
         <h2 className="text-xl">{firstCapitalize(t('at'))}</h2>
         <h2 className="text-xl">{firstCapitalize(t('gracianoPortfolio'))}</h2>
     </div>);
