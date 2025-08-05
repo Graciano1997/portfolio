@@ -9,7 +9,7 @@ export const Headline=()=>{
     top-40
     sm:top-20 
     md:top-40 
-    w-[100%] h-50
+    w-[50%] h-50
     text-[15px]
     sm:text-[20px] md:text-[20px] lg:text-[30px] xl:text-[30px]
     titleAnimation
