@@ -4,10 +4,13 @@ import { setResult, setSys2Constants, setSys2Result } from "../Slices/mathSlice"
 import { Matriz } from "./Matriz";
 import { MatrizX } from "./MatrizX";
 import { MatrizY } from "./MatrizY";
+import { useTranslation } from "react-i18next";
+import { firstCapitalize } from "../../lib/firstCapitalize";
 
 export const Equation2Sys=()=>{
     const mathState=useSelector((state)=>state.mathState);
     const dispach = useDispatch();
+    const {t} = useTranslation();
 
     const constsHandler=(element)=>{
         if(element.target.value==''){
@@ -55,7 +58,7 @@ export const Equation2Sys=()=>{
                 && mathState.sys2Constants.c1!=null && mathState.sys2Constants.c2!=null 
                 &&
                 (
-                    <button style={{alignSelf:'center'}} onClick={calcHandler} className="p-1 mt-2">Calculate</button>
+                    <button style={{alignSelf:'center'}} onClick={calcHandler} className="p-1 mt-2">{firstCapitalize(t('calculate'))}</button>
                 )
             }
 

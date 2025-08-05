@@ -6,6 +6,8 @@ import { Search } from '../general/Search';
 import { WeatherCard } from './WeatherCard';
 import { useDispatch, useSelector } from 'react-redux';
 import { cleanWeather, setSearching, weatherFetch } from '../Slices/appSlice';
+import { firstCapitalize } from '../../lib/firstCapitalize';
+import { useTranslation } from 'react-i18next';
 
 
 export const  WeatherApp=({ style, setVisibilityControl, visibilityControl })=> {
@@ -14,6 +16,7 @@ export const  WeatherApp=({ style, setVisibilityControl, visibilityControl })=> 
   
   const appState=useSelector((state)=>state.appState);
   const weatherData = appState.weather;
+  const {t}=useTranslation();
   
 
   return (
@@ -33,7 +36,7 @@ export const  WeatherApp=({ style, setVisibilityControl, visibilityControl })=> 
             dispatch(weatherFetch(appState.query));          
           }}
 
-           searchingPlaceholder={`Enter the Province or city's name`} style={'mt-2'}/>
+           searchingPlaceholder={firstCapitalize(t('province_or_city'))} style={'mt-2'}/>
           <div className='w-[80vw] mb-[-30px]'>
           {weatherData &&
           <h2 className='text-3xl text-white text-start'>{weatherData.resolvedAddress}</h2>

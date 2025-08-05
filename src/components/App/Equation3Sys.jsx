@@ -5,6 +5,8 @@ import { Matriz } from "./Matriz";
 import { MatrizX } from "./MatrizX";
 import { MatrizY } from "./MatrizY";
 import { MatrizZ } from "./MatrizZ";
+import { firstCapitalize } from "../../lib/firstCapitalize";
+import { useTranslation } from "react-i18next";
 
 export const Equation3Sys=()=>{
     const mathState=useSelector((state)=>state.mathState);
@@ -75,6 +77,8 @@ export const Equation3Sys=()=>{
         dispach(setSys3Result({d:deltaCalc,dx:deltaX,dy:deltaY,dz:deltaZ,x:x,y:y,z:z}));
     }
 
+    const {t}=useTranslation();
+
     return(
         <div className="bg-[#333] p-3 rounded flex flex-col w-[80vw] h-[60vh] overflow-y-scroll">
             <div className="flex flex-col p-2" style={{borderLeft:'2px solid white',borderRadius:'10px'}}>
@@ -118,7 +122,7 @@ export const Equation3Sys=()=>{
                 && mathState.sys3Constants.d2!=null && mathState.sys3Constants.d3!=null
                 &&
                 (
-                    <button style={{alignSelf:'center'}} onClick={calcHandler} className="p-1 mt-2">Calculate</button>
+                    <button style={{alignSelf:'center'}} onClick={calcHandler} className="p-1 mt-2">{firstCapitalize(t('calculate'))}</button>
                 )
             }
 

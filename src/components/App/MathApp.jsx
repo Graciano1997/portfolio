@@ -6,14 +6,16 @@ import { AppDesign } from "./AppDesign";
 import { MobileMunu } from "./MobileMenu";
 import { MathItem } from "../general/MathItem";
 import { Equation2Grad } from "./Equation2Grad";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { cleanAll } from "../Slices/mathSlice";
 import { Equation2Sys } from "./Equation2Sys";
 import { Equation3Sys } from "./Equation3Sys";
+import { firstCapitalize } from "../../lib/firstCapitalize";
+import { useTranslation } from "react-i18next";
 
 export const MathApp = ({style,setVisibilityControl,visibilityControl})=>{
     const dispatch = useDispatch();
-
+    const {t}= useTranslation();
     const [operationToPlay,setOperationPlay]=useState({IIgradEquation:false,IIEquationSys:false,IIIEquationSys:false});
     const [mobileMusicMenuIsOpen,setMobileMusicMenuIsOpen]=useState(false);
     
@@ -60,7 +62,7 @@ export const MathApp = ({style,setVisibilityControl,visibilityControl})=>{
                         (!operationToPlay.IIgradEquation &&
                         !operationToPlay.IIEquationSys &&
                         !operationToPlay.IIIEquationSys) &&(
-                            <h2 className="smooth text-white flex flex-wrap items-center justify-center gap-2 text-3xl">Welcome at Math Essentials<InfinityIcon className="w-8 h-8 text-white"/><LucideOmega className="w-8 h-8 text-white"/><PiIcon className="w-8 h-8 text-white"/><EqualIcon className="w-8 h-8 text-white"/><DivideIcon className="w-8 h-8 text-white"/></h2>
+                            <h2 className="smooth text-white flex flex-wrap items-center justify-center gap-2 text-3xl">{firstCapitalize(t('mathIntrodution'))}<InfinityIcon className="w-8 h-8 text-white"/><LucideOmega className="w-8 h-8 text-white"/><PiIcon className="w-8 h-8 text-white"/><EqualIcon className="w-8 h-8 text-white"/><DivideIcon className="w-8 h-8 text-white"/></h2>
                         )
 
                     }
@@ -70,9 +72,9 @@ export const MathApp = ({style,setVisibilityControl,visibilityControl})=>{
               </div>
               <div className="hidden md:block bg-white/50 w-[2px] h-[100%]"></div>
               <div className="h-[100%] w-[100%] hidden  md:flex flex-col  items-center gap-3 text-white overflow-y-auto ml-2">
-               <MathItem operationToPlay={{IIgradEquation:true,IIEquationSys:false,IIIEquationSys:false}} item={{title:'II Grad Equation'}} setOperationPlay={setOperationPlay}  />
-               <MathItem operationToPlay={{IIgradEquation:false,IIEquationSys:true,IIIEquationSys:false}} item={{title:'II Equation System'}} setOperationPlay={setOperationPlay}  />
-               <MathItem operationToPlay={{IIgradEquation:false,IIEquationSys:false,IIIEquationSys:true}} item={{title:'III Equation System'}} setOperationPlay={setOperationPlay} />
+               <MathItem operationToPlay={{IIgradEquation:true,IIEquationSys:false,IIIEquationSys:false}} item={{title:firstCapitalize(t('quadraticEquation'))}} setOperationPlay={setOperationPlay}  />
+               <MathItem operationToPlay={{IIgradEquation:false,IIEquationSys:true,IIIEquationSys:false}} item={{title:firstCapitalize(t('systemTwoEquations'))}} setOperationPlay={setOperationPlay}  />
+               <MathItem operationToPlay={{IIgradEquation:false,IIEquationSys:false,IIIEquationSys:true}} item={{title:firstCapitalize(t('systemThreeEquations'))}} setOperationPlay={setOperationPlay} />
                 </div>
             </div>
         <MobileMunu menuType={{music:false,math:true}} 

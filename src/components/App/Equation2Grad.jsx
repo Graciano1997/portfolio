@@ -1,10 +1,13 @@
 import { LucideBadgeInfo,TriangleIcon } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { setConstants, setResult } from "../Slices/mathSlice";
+import { firstCapitalize } from "../../lib/firstCapitalize";
+import { useTranslation } from "react-i18next";
 
 export const Equation2Grad=()=>{
     const mathState=useSelector((state)=>state.mathState);
     const dispach = useDispatch();
+    const {t}=useTranslation();
 
     const constsHandler=(element)=>{
         if(element.target.value==''){
@@ -38,7 +41,7 @@ export const Equation2Grad=()=>{
             <div className="flex gap-2 justify-center">
                 {
                mathState.constants.a && mathState.constants.c!=null && mathState.constants.b!=null &&(
-                    <button style={{alignSelf:'center'}} onClick={calcHandler} className="p-1 mt-2">Calculate</button>
+                    <button style={{alignSelf:'center'}} onClick={calcHandler} className="p-1 mt-2">{firstCapitalize(t('calculate'))}</button>
                 )
             }
 

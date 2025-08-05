@@ -193,5 +193,15 @@
   "about": "à propos de moi",
   "aboutcontent": "Je suis un développeur web full-stack passionné par la création d'applications propres et conviviales. Avec un œil attentif aux détails et un esprit de résolution de problèmes, je vise à créer des expériences web rapides et engageantes. Travaillons ensemble pour donner vie à vos idées !",
   "aboutHeader": "Développeur Fullstack | React, Rails, Node.js & Python | Ouvert aux opportunités locales et internationales.",
-  "myDocs": "mes documents"
+  "myDocs": "mes documents",
+  "note":"note",
+  "loseAlert": "Vous perdrez toutes les modifications...",
+  "sureQuestion": "Êtes-vous sûr de vouloir fermer l’éditeur ?",
+  "writeHere": "Écrivez ici...",
+  "province_or_city": "entrez le nom de la province ou de la ville",
+  "mathIntrodution": "Bienvenue aux Bases des Mathématiques",
+  "quadraticEquation":"Équation II degré",
+  "systemTwoEquations": "Système II Équations",
+  "systemThreeEquations": "Système III Équations",
+  "calculate": "calculer"
 }

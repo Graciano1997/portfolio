@@ -10,6 +10,8 @@ import { AppDesign } from './AppDesign';
 import { PenLineIcon, SaveIcon } from 'lucide-react';
 import { AppFooter } from '../general/AppFooter';
 import Toolbar from './Toolbar';
+import { useTranslation } from 'react-i18next';
+import { firstCapitalize } from '../../lib/firstCapitalize';
 
 
 const theme = {
@@ -48,8 +50,9 @@ const editorConfig = {
 
 export default function EditorApp({ style, setVisibilityControl, visibilityControl }) {
   const date= new Date();
+  const {t}=useTranslation();
   
-  const defaultName=`Note_${date.getDate()}_${date.getMonth()+1}_${date.getFullYear()}_${date.getHours()}:${date.getMinutes()}`;
+  const defaultName=`${firstCapitalize(t('note'))}_${date.getDate()}_${date.getMonth()+1}_${date.getFullYear()}_${date.getHours()}:${date.getMinutes()}`;
   const [mobileMusicMenuIsOpen, setMobileMusicMenuIsOpen] = useState(false);
   const [text,setText]=useState('');
   const [filename,setFilename]=useState(defaultName);
@@ -72,7 +75,7 @@ export default function EditorApp({ style, setVisibilityControl, visibilityContr
            
           if(text.length>0){
 
-            const confirmed = confirm('You will lose all the modifications... \n Are you sure you want close the editor?');
+            const confirmed = confirm(`${firstCapitalize(t('loseAlert'))} \n ${firstCapitalize(t('sureQuestion'))}`);
 
             if (confirmed){
               buttonRef.current.click();
@@ -129,7 +132,7 @@ export default function EditorApp({ style, setVisibilityControl, visibilityContr
             <div className="editor-container">
               <RichTextPlugin
                 contentEditable={<ContentEditable className="editor-input" />}
-                placeholder={<div className="editor-placeholder mt-[-7.5rem]">Write here...</div>}
+                placeholder={<div className="editor-placeholder mt-[-7.5rem]">{firstCapitalize(t('writeHere'))}</div>}
               />
               <HistoryPlugin />
               <OnChangePlugin onChange={onChange} />

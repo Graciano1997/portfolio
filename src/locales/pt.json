@@ -194,5 +194,15 @@
     "about":"acerca de Mim",
     "aboutcontent":"Sou um desenvolvedor web full-stack que adora criar aplicativos limpos e fáceis de usar.Com um olhar atento aos detalhes e uma mentalidade voltada para a resolução de problemas, meu objetivo é criar experiências web rápidas e envolventes. Vamos trabalhar juntos para dar vida às suas ideias!",
     "aboutHeader":"Fullstack Developer | Especialista em React, Rails, Node.js & Python | Disponível para oportunidades locais e globais.",
-    "myDocs":"Meus Documentos"
+    "myDocs":"Meus Documentos",
+    "note":"nota",
+    "loseAlert": "Você perderá todas as modificações...",
+    "sureQuestion": "Tem certeza de que deseja fechar o editor?",
+    "writeHere":"Escreva aqui...",
+    "province_or_city": "insira o nome da província ou cidade",
+    "mathIntrodution": "Bem-vindo ao Essencial de Matemática",
+    "quadraticEquation":"Equação do 2º grau",
+    "systemTwoEquations": "Sistema II Equações",
+    "systemThreeEquations": "Sistema III Equações",
+    "calculate":"calcular"
 }

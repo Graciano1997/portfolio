@@ -193,5 +193,15 @@
     "about":"about Me",
     "aboutcontent":"I'm a full-stack web developer who loves building clean, user-friendly applications. With a sharp eye for detail and a problem-solving mindset,I aim to create fast, engaging web experiences. Let’s work together to bring your ideas to life!",
     "aboutHeader":"Fullstack Developer | React, Rails, Node.js & Python | Open to local and international opportunities.",
-    "myDocs":"my docs"
+    "myDocs":"my docs",
+    "note":"note",
+    "loseAlert":"You will lose all the modifications...",
+    "sureQuestion":"Are you sure you want close the editor?",
+    "writeHere":"Write here...",
+    "province_or_city":"enter the Province or city's name",
+    "mathIntrodution":"Welcome at Math Essentials",
+    "quadraticEquation":"Quadratic Equation",
+    "systemTwoEquations": "System II Equations",
+    "systemThreeEquations": "System III Equations",
+    "calculate":"calculate"
 }
