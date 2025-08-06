@@ -204,5 +204,8 @@
     "quadraticEquation":"Equação do 2º grau",
     "systemTwoEquations": "Sistema II Equações",
     "systemThreeEquations": "Sistema III Equações",
-    "calculate":"calcular"
+    "calculate":"calcular",
+    "resume_en":"CV Ing",
+    "resume_pt":"CV Port",
+    "motivation":"motivação"
 }

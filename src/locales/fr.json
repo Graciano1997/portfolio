@@ -203,5 +203,8 @@
   "quadraticEquation":"Équation II degré",
   "systemTwoEquations": "Système II Équations",
   "systemThreeEquations": "Système III Équations",
-  "calculate": "calculer"
+  "calculate": "calculer",
+  "resume_en": "Resume En",
+  "resume_pt": "Resume Pt",
+  "motivation": "Motivation"
 }

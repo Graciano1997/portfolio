@@ -203,5 +203,8 @@
     "quadraticEquation":"Quadratic Equation",
     "systemTwoEquations": "System II Equations",
     "systemThreeEquations": "System III Equations",
-    "calculate":"calculate"
+    "calculate":"calculate",
+    "resume_en":"Resume En",
+    "resume_pt":"Resume Pt",
+    "motivation":"motivation"
 }

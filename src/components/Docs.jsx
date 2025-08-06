@@ -12,9 +12,9 @@ export const Docs=()=>{
     <div className="h-100 w-100 sm:w-[50%]  fixed left-3 top-30 sm:top-25 md:top-30">
         <Title title={firstCapitalize(t('myDocs'))}/>
         <div className="h-[250px] mt-10 sm:mt-2 md:mt-10 flex  md:gap-3">
-            <DocItem name={"Résumé"} item={Mydocs.resume}/>
-            <DocItem name={"CV"} item={Mydocs.cv}/>
-            <DocItem name={"Motivation"} item={Mydocs.motivation}/>
+            <DocItem name={firstCapitalize(t('resume_en'))} item={Mydocs.resume}/>
+            <DocItem name={firstCapitalize(t("resume_pt"))} item={Mydocs.cv}/>
+            <DocItem name={firstCapitalize(t("motivation"))} item={Mydocs.motivation}/>
         </div>
     </div>
     </>);
