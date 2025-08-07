@@ -109,7 +109,7 @@ export default function EditorApp({ style, setVisibilityControl, visibilityContr
 
           )
         }
-                <div className="mt-20">
+                <div className="mt-20 text-black">
 
           {text.length>0 &&
           (
@@ -122,7 +122,7 @@ export default function EditorApp({ style, setVisibilityControl, visibilityContr
           block  absolute text-white 
           h-[25px] w-[40%] md:w-80
             text-2xl bg-white p-1 rounded shadow  left-20
-           top-6 transition-all duration-200 hover:bg-green-100  rounded bg-white ' placeholder='Note title'/>
+           top-6 transition-all duration-200 hover:bg-green-100  rounded bg-white' placeholder='Note title'/>
           )
           }          
             
