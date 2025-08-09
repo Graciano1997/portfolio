@@ -36,6 +36,7 @@ export const Menu = ()=>{
         bg-white fixed bottom-3 rounded-full 
         flex justify-around items-center
          cursor-pointer
+         text-[#0F172A]
          
          `}>
            {!isOpen?

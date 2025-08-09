@@ -14,7 +14,7 @@ export const Apps = () => {
     return (<>
         <Search dispatcher={setProjects} projects={projects} searchingPlaceholder={firstCapitalize(t('searchApp'))} style={'absolute top-5 sm:top-5'} />
         <div className=" h-[70vh] md:h-90 sm:h-[70vh] mt-19  md:h-[65vh] xl:h-[70vh] xl:mt-25 w-[100%] sm:w-[600px] md:w-[700px] lx:w-[900px]
-     flex flex-wrap overflow-y-auto justify-center">
+     flex flex-wrap overflow-y-auto justify-center text-[#0F172A]">
             {
             projects.length>0 && projects.map((project)=><AppItem project={project} icon={project.icon}/>)
             }

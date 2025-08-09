@@ -6,7 +6,7 @@ export const ProjectItem = ({ project,closeHandler }) => {
 
   return (
     <Modal closeHandler={closeHandler}>
-      <div className="flex flex-wrap  md:grid md:grid-cols-[70fr_30fr]  h-[100%] md:p-3 gap-10">
+      <div className="flex flex-wrap  md:grid md:grid-cols-[70fr_30fr]  h-[100%] md:p-3 gap-10 ">
         <div className="text-start">
           <h2 className="text-start mt-2 text-3xl md:text-4xl">{project.title}</h2>
           {

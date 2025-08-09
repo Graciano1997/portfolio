@@ -43,8 +43,8 @@ export const Search = ({projects=[], dispatcher=null, searchingPlaceholder="Sear
             className="ml-2 h-10 w-[90%] rounded-full text-black p-5 outline-none" />
             {appState.searching && (
                 <>
-                <button onClick={()=>{if(dispatcher){dispatcher(projects.filter((project)=>project.title.includes(appState.query)))}}}><SearchIcon className="w-5 w-5 text-black "/></button>
-                <button className="bg-black mr-2" onClick={()=>{
+                <button style={{background:'white'}} onClick={()=>{if(dispatcher){dispatcher(projects.filter((project)=>project.title.includes(appState.query)))}}}><SearchIcon className="w-5 w-5 text-black "/></button>
+                <button style={{background:'white'}} className="mr-2" onClick={()=>{
                     inputRef.current.value='';
                     dispatch(setQuery(''));
                     dispatch(setSearching(false));

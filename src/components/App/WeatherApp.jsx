@@ -42,7 +42,7 @@ export const  WeatherApp=({ style, setVisibilityControl, visibilityControl })=> 
           <h2 className='text-3xl text-white text-start'>{weatherData.resolvedAddress}</h2>
           }
           </div>
-          <div className='w-[80vw] p-3 h-90 flex flex-col flex-wrap  justify-center gap-5 overflow-y-scroll '>
+          <div className='w-[80vw] p-3 h-90 flex flex-col flex-wrap  justify-center gap-5 overflow-y-outo '>
             
             {appState.isLoading &&  <div className='flex justify-center items-center gap-3'>< LoaderCircleIcon className='w-10 h-10 text-white'/> <h1 className='text-white'> Loading</h1></div>}
             {!appState.isLoading && appState.error  && <div className='flex justify-center items-center gap-3'><LucideX className='w-10 h-10 text-red-600'/> <h4 className='text-white'> There is an Error, Verify the Network is working Or ensure enter a valid city,state,province name.</h4></div>}

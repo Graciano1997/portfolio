@@ -4,10 +4,9 @@ export const WindowControls =({minimizeHandler=()=>{},closeHandler=()=>{}})=>{
     return(
     <>
     <button
+    style={{background:'white'}}
          onClick={()=>{
             closeHandler();
-                // setMusicToPlay(null);
-                // setVisibilityControl(false);
             }}
             className="absolute text-red-500 
             text-2xl bg-white p-1 rounded shadow  right-[5px]
