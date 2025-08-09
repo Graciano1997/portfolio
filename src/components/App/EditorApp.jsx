@@ -86,8 +86,7 @@ export default function EditorApp({ style, setVisibilityControl, visibilityContr
             }}
            }
 
-        minimizeHandler={() => setVisibilityControl({ ...visibilityControl, editor: false })}
-      >
+        minimizeHandler={() => setVisibilityControl({ ...visibilityControl, editor: false })}>
         
         {
           text.length>0 &&
