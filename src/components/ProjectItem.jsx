@@ -28,7 +28,7 @@ export const ProjectItem = ({ project,closeHandler }) => {
            {project.link.length===3 && (<a href={project.link[2]} target="_blank" className="text-light flex gap-2 items-center p-2 bg-blue-200 rounded-[16px]"><GithubIcon className="w-5 h-5" />BackEnd</a>)} 
           </div>
         </div>
-        <ImageVisualizer images={project.image} />
+        <ImageVisualizer style={{background:'white', padding:'15px'}}  images={project.image} />
       </div>
     </Modal>
   )

@@ -10,6 +10,7 @@ const Modal = ({children,closeHandler=()=>{} })=>{
         top-[0] left-[0] 
         flex justify-center' style={{zIndex:2000}} >
          <button
+         style={{background:'white'}}
         onClick={()=>{ 
           closeHandler();
         }}
