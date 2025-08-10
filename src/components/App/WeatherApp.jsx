@@ -32,6 +32,7 @@ export const  WeatherApp=({ style, setVisibilityControl, visibilityControl })=> 
       >
         <div className='w-[97vw] h-[80vh] mt-15 flex flex-col items-center gap-5 '>
           <Search
+          weather={true}
           dispatcher={()=>{
             dispatch(weatherFetch(appState.query));          
           }}

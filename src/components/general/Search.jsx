@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setQuery, setSearching } from "../Slices/appSlice";
 import { Projects } from "../../data/Projects";
 
-export const Search = ({projects=[], dispatcher=null, searchingPlaceholder="Searching",style}) => {
+export const Search = ({projects=[], dispatcher=null, searchingPlaceholder="Searching",style,weather=false}) => {
     
     const inputRef= useRef(null);
     const dispatch = useDispatch();
@@ -48,7 +48,9 @@ export const Search = ({projects=[], dispatcher=null, searchingPlaceholder="Sear
                     inputRef.current.value='';
                     dispatch(setQuery(''));
                     dispatch(setSearching(false));
-                    if(dispatcher){dispatcher(Projects())}
+                    if(!weather){
+                        if(dispatcher){dispatcher(Projects())}
+                    }
                 }}>
                 <XIcon className="text-black w-5 h-5"/>
             </button>
